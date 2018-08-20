@@ -1,0 +1,36 @@
+<!-- Projects Start -->
+
+<section id="{{ page.section-type }}" class="container content-section text-center">
+    {{ page.content | markdownify }}
+
+    {% assign even = forloop.length | modulo: 2 %}
+    {% for project in site.projects %}
+    {% assign loopindex = forloop.index | modulo: 2 %}
+    {% assign remaining = forloop.rindex %}
+    {% if loopindex != 0 %}
+    <div class="row">
+    {% endif %}
+        {% if remaining >= 1 && even %}
+        <div class="col-md-5 col-md-offset-1">
+        {% else %}
+        <div class="col-md-10 col-md-offset-1">
+        {% endif %}
+            <div class="projects-heading">
+                <h4>{{ project.title }}</h4>
+            </div>
+            <div class="project-image">
+                <a href="{{ project.url }}">
+                    <img class="img-responsive" src="{{site.baseurl}}{{ project.image }}" alt="">
+                </a>
+            </div>
+            <div class="projects-body">
+                {{ project.description | markdownify }}
+            </div>
+        </div>
+    {% if loopindex == 0 %}
+    </div>
+    {% endif %}
+    {% endfor %}
+</section>
+
+<!-- Projects End -->
