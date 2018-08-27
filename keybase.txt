@@ -1,0 +1,67 @@
+==================================================================
+https://keybase.io/kelsos
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://kelsos.net
+  * I am kelsos (https://keybase.io/kelsos) on keybase.
+  * I have a public key with fingerprint 5248 E1FE E7F5 DBB4 75DA  2110 7DC3 2768 345A B0C6
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "fingerprint": "5248e1fee7f5dbb475da21107dc32768345ab0c6",
+            "host": "keybase.io",
+            "key_id": "7dc32768345ab0c6",
+            "kid": "01014b85cf2cd750a82ba688cf623de3200c4d09f392537be587fde737614578bdb10a",
+            "uid": "bb1afc929776ed3164fca7834419c619",
+            "username": "kelsos"
+        },
+        "service": {
+            "hostname": "kelsos.net",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1426838264,
+    "expire_in": 157680000,
+    "prev": "5f14e9c387804eec27e92cae10e489097c46ff8b6d3015b3d6ed1ad61094f364",
+    "seqno": 4,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.8
+Comment: https://keybase.io/crypto
+
+yMIVAnicbVJdSBVBGL3XzOhWmJWi/UhsGGrX3Nmd3dm9FJZmRFAhFv2o3XZmZ3TT
+7t72rjfFxJIiSKyXwCJMo1CKSOpJKMJSsEj6RUGjiH7IrB6ihwqLmpV6CJqXYc53
+zvnmO3wDc6b5Av68kcSktrSCH/77t1fV+rbNevKtQcC2WS+EGoRqOnUxK1JJnahj
+RVwhJCgS1ChglCKmmBhDpJiGBICITCJLSNVkqBhYJKoQFKrsmKfgNtiI0ZWWzTH+
+CFsmR//Dr54qiEAEEGsKYRIxkSIamoQNVdMIUyXZpLIkigSaos5kXVJkhKmiIWZS
+JCMVQAVp2MRANLhd7ZQdxsBgRJd0hFRqykCFjBiIt4VAJyrQPWKMOhFjH536a03M
+jgmNQYFjcYtQLwBvjn/qKyPU5bqoY7s2sWs4XuW60ZAnc+ujHu8AxeE/DmFsRUwe
+IRfEqROz7IgQApxJXMuzBFDiIWiSCoMCrYtaDg1bHkPh2Yj8eG1o3AueAUh1ImtI
+EyGlREJUl4hBgUihpos6IlBlTMOqKYtAwbLJxwWGqQJRh0xWoeDNtD9iCyHeyTUq
+uWXMqowYbq1DhcY7feWJPn/AlzQ9wVsCX2Dm3L+roZIZvw48PF5YN9Le03mhK6ej
+b/Dc9QH3S+JEee+GrTuXLsv+Wre55PSKTbHB7uS0zaOTgaGlzBl+mQXTOxZXG3ue
+HW4zMm+NHxoNpp9PWLv//ckzLRk7A/fyUz+U7k2Z9+7SN/XRhPxxoZoyntz8YnVR
+sCd7Uovj/MKk+UdfjUlNRa9flTwtmeF0ZmQ9EG70tn0HLNNfrPVnXen62d6w6MR6
+Py07WFG2hLVWOM/ems3O7AUvQ4W54613P5+Xtm+pSd1d+DheUJZX2mKvyy3qzlnr
+B+HQp94xdiyt803Z0PKSizsmBjb2jd2mxdpZ365rR/phzuV43lh+f9Oa5+Aqentz
++FTub4A6HFI=
+=Mr21
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/kelsos
+
+==================================================================
