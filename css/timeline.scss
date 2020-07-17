@@ -133,6 +133,17 @@
     margin-bottom: 0;
 }
 
+.timeline-body__organization > p,
+.timeline-body__description > p {
+    margin: auto !important;
+}
+
+.timeline-body__organization > p {
+    font-size: 16px;
+    font-weight: 600;
+    color: #c4c4c4;
+}
+
 @media(min-width:768px) {
     .timeline:before {
         left: 50%;
