@@ -1,3 +1,9 @@
 # Personal Website
 
-This is my Personal website based on [Personal jekyll theme](https://le4ker.github.io/personal-jekyll-theme/),
+Can be found under [kelsos.net](https://kelsos.net).
+
+Build with:
+- [Nuxt 3](https://nuxt.com)
+- [NuxtLabs UI](https://ui.nuxtlabs.com) 
+- [@nuxt/content](https://content.nuxtjs.org)
+- [tailwind](https://tailwindcss.com/)
