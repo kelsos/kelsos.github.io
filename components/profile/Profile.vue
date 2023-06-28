@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import authorImg from '~/assets/img/author.jpg';
 const css = useCssModule();
 </script>
 
@@ -18,7 +19,7 @@ const css = useCssModule();
                 <div class="relative">
                   <UAvatar
                     size="3xl"
-                    src="/assets/img/author.jpg"
+                    :src="authorImg"
                     class="shadow-xl -m-10"
                   />
                 </div>

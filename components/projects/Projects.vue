@@ -1,5 +1,10 @@
 <script setup lang="ts">
 import ProjectEntry from '~/components/projects/Entry.vue';
+import rotkiImg from '~/assets/img/projects/rotki.png';
+import mbrcImg from '~/assets/img/projects/mbrc.jpg';
+import raidenImg from '~/assets/img/projects/raiden.png';
+import sikorkaImg from '~/assets/img/projects/sikorka.png';
+import wmcImg from '~/assets/img/projects/wmc.png';
 
 interface ProjectDetails {
   title: string;
@@ -13,41 +18,41 @@ const projects: ProjectDetails[] = [
     title: 'rotki',
     description:
       'open source portfolio tracker, accounting and analytics tool that protects your privacy',
-    image: '/assets/img/projects/rotki.png',
+    image: rotkiImg,
     url: 'https://rotki.com',
   },
   {
     title: 'MusicBee Remote',
     description:
       'Android application and Plugin that allows controlling MusicBee remotely.',
-    image: '/assets/img/projects/mbrc.jpg',
+    image: mbrcImg,
     url: 'https://mbrc.kelsos.net',
   },
   {
     title: 'Sikorka (Android App)',
     description:
       'Application that used light client to interact with smart-contracts. Part of a proof of location project.',
-    image: 'assets/img/projects/sikorka.png',
+    image: sikorkaImg,
     url: 'https://github.com/Sikorkaio/android-app',
   },
   {
     title: 'Raiden Light Client',
     description:
       'JavaScript SDK, CLI and dApp to carry out fast, cheap, scalable off-chain token transfers.',
-    image: '/assets/img/projects/raiden.png',
+    image: raidenImg,
     url: 'https://github.com/raiden-network/light-client',
   },
   {
     title: 'Raiden WebUI',
     description: 'The frontend for the original Raiden Python Implementation',
-    image: '/assets/img/projects/raiden.png',
+    image: raidenImg,
     url: 'https://github.com/raiden-network/webui',
   },
   {
     title: 'White Mobile Cloud (Android App)',
     description:
       'White Label Cloud Backup/Restore Android application part of the White Mobile Cloud Platform',
-    image: '/assets/img/projects/wmc.png',
+    image: wmcImg,
     url: 'http://whitemobilecloud.com',
   },
 ];

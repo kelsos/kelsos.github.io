@@ -1,5 +1,10 @@
 <script setup lang="ts">
 import Avatar from '~/components/Avatar.vue';
+import teiImg from '~/assets/img/timeline/teithess.png';
+import peImg from '~/assets/img/timeline/perfectedge.png';
+import arxImg from '~/assets/img/timeline/arxnet.png';
+import bbImg from '~/assets/img/timeline/brainbot.jpg';
+import rotkiImg from '~/assets/img/timeline/rotki.png';
 
 interface TimelineDataEntry {
   period: string;
@@ -14,21 +19,21 @@ const entries: TimelineDataEntry[] = [
     period: '2021 - Now',
     where: 'Rotki Solutions GmbH',
     what: 'Frontend Lead/Infrastructure',
-    image: '/assets/img/timeline/rotki.png',
+    image: rotkiImg,
     description: 'Working with Vue.js/Typescript, Ansible & Docker Swarm.',
   },
   {
     period: '2018 - 2021',
     where: 'rotki',
     what: 'Open-source Contributor',
-    image: '/assets/img/timeline/rotki.png',
+    image: rotkiImg,
     description: 'Working with Vue.js/Typescript on the frontend.',
   },
   {
     period: '2018 - 2020',
     where: 'brainbot technologies AG',
     what: 'Software Engineer',
-    image: '/assets/img/timeline/brainbot.jpg',
+    image: bbImg,
     description:
       'Raiden Network WebUI and part of the Raiden Light Client/Dapp team.',
   },
@@ -36,28 +41,28 @@ const entries: TimelineDataEntry[] = [
     period: '2015 - 2018',
     where: 'arx.net S.A.',
     what: 'Senior Android Developer',
-    image: '/assets/img/timeline/arxnet.png',
+    image: arxImg,
     description: 'Lead of the Android client of White Mobile Cloud.',
   },
   {
     period: '2013 - 2014',
     where: 'arx.net S.A.',
     what: 'Frontend Developer',
-    image: '/assets/img/timeline/arxnet.png',
+    image: arxImg,
     description: 'Web development with Apache::ASP, Perl, and JQuery.',
   },
   {
     period: '2012 - 2013',
     where: 'arx.net S.A.',
     what: 'Intern',
-    image: '/assets/img/timeline/arxnet.png',
+    image: arxImg,
     description: 'Web development with Apache::ASP, Perl, and JQuery.',
   },
   {
     period: '2011 - 2013',
     where: 'Perfect Edge Ltd',
     what: 'Software developer/Infrastructure',
-    image: '/assets/img/timeline/perfectedge.png',
+    image: peImg,
     description:
       'Part of a small team working with Adobe Flex/ActionScript 3/PHP/MySQL.',
   },
@@ -65,7 +70,7 @@ const entries: TimelineDataEntry[] = [
     period: '2004 - 2014',
     where: 'IT department, ATEI Thessalonikis',
     what: "Bachelor's Degree",
-    image: '/assets/img/timeline/teithess.png',
+    image: teiImg,
     description: 'Studies',
   },
 ];
