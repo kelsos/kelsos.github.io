@@ -13,14 +13,14 @@ const projects: ProjectDetails[] = [
     title: 'rotki',
     description:
       'open source portfolio tracker, accounting and analytics tool that protects your privacy',
-    image: '/assets/img/projects/rotki.png',
+    image: '~/assets/img/projects/rotki.png',
     url: 'https://rotki.com',
   },
   {
     title: 'MusicBee Remote',
     description:
       'Android application and Plugin that allows controlling MusicBee remotely.',
-    image: '/assets/img/projects/mbrc.jpg',
+    image: '~/assets/img/projects/mbrc.jpg',
     url: 'https://mbrc.kelsos.net',
   },
   {
@@ -34,20 +34,20 @@ const projects: ProjectDetails[] = [
     title: 'Raiden Light Client',
     description:
       'JavaScript SDK, CLI and dApp to carry out fast, cheap, scalable off-chain token transfers.',
-    image: '/assets/img/projects/raiden.png',
+    image: '~/assets/img/projects/raiden.png',
     url: 'https://github.com/raiden-network/light-client',
   },
   {
     title: 'Raiden WebUI',
     description: 'The frontend for the original Raiden Python Implementation',
-    image: '/assets/img/projects/raiden.png',
+    image: '~/assets/img/projects/raiden.png',
     url: 'https://github.com/raiden-network/webui',
   },
   {
     title: 'White Mobile Cloud (Android App)',
     description:
       'White Label Cloud Backup/Restore Android application part of the White Mobile Cloud Platform',
-    image: '/assets/img/projects/wmc.png',
+    image: '~/assets/img/projects/wmc.png',
     url: 'http://whitemobilecloud.com',
   },
 ];

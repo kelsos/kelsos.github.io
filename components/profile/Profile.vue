@@ -18,7 +18,7 @@ const css = useCssModule();
                 <div class="relative">
                   <UAvatar
                     size="3xl"
-                    src="/assets/img/author.jpg"
+                    src="~/assets/img/author.jpg"
                     class="shadow-xl -m-10"
                   />
                 </div>
