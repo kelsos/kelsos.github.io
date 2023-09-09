@@ -4,7 +4,7 @@ import path from 'node:path';
 export default defineNuxtConfig({
   ssr: true,
   modules: [
-    '@nuxthq/ui',
+    '@nuxt/ui',
     '@nuxt/content',
     'nuxt-simple-sitemap',
     '@nuxt/devtools',

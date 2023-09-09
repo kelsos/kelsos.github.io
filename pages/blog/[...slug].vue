@@ -9,7 +9,7 @@ const route = useRoute();
 const css = useCssModule();
 
 const { data } = await useAsyncData(route.path, () =>
-  queryContent(route.path).findOne()
+  queryContent(route.path).findOne(),
 );
 
 if (!isDefined(data)) {

@@ -6,7 +6,7 @@ withDefaults(
   }>(),
   {
     last: false,
-  }
+  },
 );
 </script>
 

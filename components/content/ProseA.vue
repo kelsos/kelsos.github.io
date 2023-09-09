@@ -6,7 +6,7 @@ withDefaults(
   }>(),
   {
     target: undefined,
-  }
+  },
 );
 </script>
 
