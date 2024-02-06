@@ -66,7 +66,9 @@ const {
   <section class="items-center py-16 lg:h-screen px-4">
     <div class="justify-center max-w-6xl px-4 py-4 mx-auto lg:py-8 md:px-6">
       <div class="max-w-xl mx-auto">
-        <div class="text-center text-4xl font-bold">Projects</div>
+        <div class="text-center text-4xl font-bold">
+          Projects
+        </div>
       </div>
       <div class="max-w-xl mx-auto mt-8">
         <p class="text-center text-sm text-gray-400">
@@ -79,8 +81,9 @@ const {
             target="_blank"
             rel="noreferrer nofollow"
             class="transition hover:text-primary-500"
-            >GitHub</a
-          >.
+          >
+            GitHub
+          </a>.
         </p>
       </div>
       <div class="mt-16 sm:mt-20">
@@ -88,9 +91,17 @@ const {
           role="list"
           class="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
         >
-          <template v-for="project in projects" :key="project.title">
-            <ProjectEntry :url="project.url" :img="project.image">
-              <template #title> {{ project.title }}</template>
+          <template
+            v-for="project in projects"
+            :key="project.title"
+          >
+            <ProjectEntry
+              :url="project.url"
+              :img="project.image"
+            >
+              <template #title>
+                {{ project.title }}
+              </template>
               {{ project.description }}
             </ProjectEntry>
           </template>

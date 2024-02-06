@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import authorImg from '~/assets/img/author.jpg';
+
 const css = useCssModule();
 </script>
 

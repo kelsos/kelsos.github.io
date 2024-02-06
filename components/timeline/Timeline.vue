@@ -69,7 +69,7 @@ const entries: TimelineDataEntry[] = [
   {
     period: '2004 - 2014',
     where: 'IT department, ATEI Thessalonikis',
-    what: "Bachelor's Degree",
+    what: 'Bachelor\'s Degree',
     image: teiImg,
     description: 'Studies',
   },
@@ -80,16 +80,24 @@ const entries: TimelineDataEntry[] = [
   <section class="items-center py-16">
     <div class="justify-center max-w-6xl px-4 py-4 mx-auto lg:py-8 md:px-6">
       <div class="max-w-xl mx-auto">
-        <div class="text-center text-4xl font-bold">Timeline</div>
+        <div class="text-center text-4xl font-bold">
+          Timeline
+        </div>
       </div>
       <div class="w-full mx-auto lg:max-w-3xl mt-8">
-        <template v-for="(entry, i) in entries" :key="i">
+        <template
+          v-for="(entry, i) in entries"
+          :key="i"
+        >
           <TimelineEntry
             :period="entry.period"
             :last="i + 1 === entries.length"
           >
             <template #icon>
-              <Avatar :img="entry.image" class="dark:ring-1 ring-zinc-300" />
+              <Avatar
+                :img="entry.image"
+                class="dark:ring-1 ring-zinc-300"
+              />
             </template>
             <template #title>
               <TextTitle>

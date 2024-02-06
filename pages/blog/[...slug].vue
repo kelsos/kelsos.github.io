@@ -8,28 +8,34 @@ definePageMeta({
 const route = useRoute();
 const css = useCssModule();
 
-const { data } = await useAsyncData(route.path, () =>
-  queryContent(route.path).findOne(),
-);
+const { data } = await useAsyncData(route.path, () => queryContent(route.path).findOne());
 
-if (!isDefined(data)) {
+if (!isDefined(data))
   navigateTo('/blog');
-}
 
 const postDate = computed(() => new Date(get(data)?.date));
 const formattedDate = useDateFormat(postDate, 'DD MMMM YYYY');
 </script>
 
 <template>
-  <main v-if="data" class="flex-col flex items-center">
+  <main
+    v-if="data"
+    class="flex-col flex items-center"
+  >
     <div class="lg:max-w-3xl font-normal text-zinc-300">
-      <UButton label="Back" class="mt-4" @click="navigateTo('/blog')">
+      <UButton
+        label="Back"
+        class="mt-4"
+        @click="navigateTo('/blog')"
+      >
         <template #leading>
           <UIcon name="i-heroicons-chevron-left" />
         </template>
       </UButton>
       <SectionHeader>
-        <template #title>{{ data.title }}</template>
+        <template #title>
+          {{ data.title }}
+        </template>
         <span> {{ formattedDate }}</span>
       </SectionHeader>
       <UContainer :class="css.content">

@@ -4,21 +4,20 @@ function findHashPosition(hash: string): {
   el: any;
   behavior: ScrollBehavior;
   top: number;
-} {
+} | undefined {
   const el = document.querySelector(hash);
   const sticky = document.querySelector('.sticky');
   let offset = 0;
 
-  if (sticky) {
+  if (sticky)
     offset = parseFloat(getComputedStyle(sticky).height);
-  }
 
   // vue-router does not incorporate scroll-margin-top on its own.
   if (el) {
     const top = parseFloat(getComputedStyle(el).scrollMarginTop);
     return {
-      el: hash,
       behavior: 'smooth',
+      el: hash,
       top: top + offset,
     };
   }
@@ -43,7 +42,8 @@ export default {
       return new Promise((resolve) => {
         if (to.path === from.path) {
           setTimeout(() => resolve(findHashPosition(to.hash)), 50);
-        } else {
+        }
+        else {
           nuxtApp.hooks.hookOnce('page:finish', () => {
             setTimeout(() => resolve(findHashPosition(to.hash)), 50);
           });
@@ -54,4 +54,4 @@ export default {
     // Scroll to top of window
     return { top: 0 };
   },
-} as RouterConfig;
+} satisfies RouterConfig;

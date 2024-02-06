@@ -30,7 +30,10 @@ withDefaults(
           <slot name="icon" />
         </div>
       </div>
-      <div v-if="!last" class="w-px h-full bg-zinc-300" />
+      <div
+        v-if="!last"
+        class="w-px h-full bg-zinc-300"
+      />
     </div>
     <div
       class="relative flex-1 mb-16 bg-white rounded shadow md:mb-8 dark:bg-zinc-800"

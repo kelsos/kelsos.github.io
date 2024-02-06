@@ -7,7 +7,7 @@ const emit = defineEmits<{
   click: [];
 }>();
 
-const getLink = (to: string) => {
+function getLink(to: string) {
   if (to.startsWith('#')) {
     return {
       path: '/',
@@ -15,11 +15,14 @@ const getLink = (to: string) => {
     };
   }
   return to;
-};
+}
 </script>
 
 <template>
-  <template v-for="link in links" :key="link.to">
+  <template
+    v-for="link in links"
+    :key="link.to"
+  >
     <NuxtLink
       :to="getLink(link.to)"
       class="flex items-end gap-1.5 font-normal text-md dark:text-white hover:dark:text-zinc-300"

@@ -20,15 +20,23 @@ defineProps<{
       <dl
         class="left-0 top-0 lg:left-auto lg:right-full lg:mr-[calc(6.5rem+1px)]"
       >
-        <dt class="sr-only">Date</dt>
+        <dt class="sr-only">
+          Date
+        </dt>
         <dd class="whitespace-nowrap text-xs leading-6 dark:text-zinc-300">
-          <PostTime v-if="date" :date="date" />
+          <PostTime
+            v-if="date"
+            :date="date"
+          />
         </dd>
       </dl>
       <TextDescription>{{ description }}</TextDescription>
     </div>
     <div class="my-1">
-      <template v-for="tag in tags" :key="tag">
+      <template
+        v-for="tag in tags"
+        :key="tag"
+      >
         <UBadge :label="tag" />
       </template>
     </div>

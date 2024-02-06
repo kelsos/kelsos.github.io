@@ -2,79 +2,49 @@
 import path from 'node:path';
 
 export default defineNuxtConfig({
-  ssr: true,
-  modules: [
-    '@nuxt/ui',
-    '@nuxt/content',
-    '@nuxtjs/sitemap',
-    '@nuxt/devtools',
-    '@vueuse/nuxt',
-    '@nuxtjs/robots',
-  ],
   app: {
     head: {
       charset: 'utf-8',
-      viewport: 'width=device-width, initial-scale=1',
-      meta: [
-        {
-          name: 'theme-color',
-          content: '#ffffff',
-        },
-        {
-          name: 'msapplication-TileColor',
-          content: '#da532c',
-        },
-      ],
       link: [
         {
+          href: '/apple-touch-icon.png',
           rel: 'apple-touch-icon',
           sizes: '180x180',
-          href: '/apple-touch-icon.png',
         },
         {
-          rel: 'icon',
-          type: 'image/png',
-          sizes: '32x32',
           href: '/favicon-32x32.png',
+          rel: 'icon',
+          sizes: '32x32',
+          type: 'image/png',
         },
         {
-          rel: 'icon',
-          type: 'image/png',
-          sizes: '16x16',
           href: '/favicon-16x16.png',
+          rel: 'icon',
+          sizes: '16x16',
+          type: 'image/png',
         },
-        { rel: 'manifest', href: '/site.webmanifest' },
-        { rel: 'mask-icon', href: '/safari-pinned-tab.svg', color: '#5bbad5' },
+        { href: '/site.webmanifest', rel: 'manifest' },
+        { color: '#5bbad5', href: '/safari-pinned-tab.svg', rel: 'mask-icon' },
       ],
+      meta: [
+        {
+          content: '#ffffff',
+          name: 'theme-color',
+        },
+        {
+          content: '#da532c',
+          name: 'msapplication-TileColor',
+        },
+      ],
+      viewport: 'width=device-width, initial-scale=1',
     },
-  },
-  site: {
-    url: 'https://kelsos.net',
-  },
-  sitemap: {
-    exclude: ['/card/**'],
-  },
-  ui: {
-    global: true,
-    icons: ['heroicons', 'simple-icons'],
   },
   colorMode: {
     preference: 'dark',
   },
   content: {
     documentDriven: false,
-    sources: {
-      content: {
-        driver: 'fs',
-        base: path.resolve(__dirname, 'content'),
-      },
-    },
     highlight: {
-      theme: {
-        light: 'material-theme-lighter',
-        default: 'material-theme',
-        dark: 'material-theme-palenight',
-      },
       preload: [
         'json',
         'js',
@@ -89,19 +59,27 @@ export default defineNuxtConfig({
         'bash',
         'ini',
       ],
+      theme: {
+        dark: 'material-theme-palenight',
+        default: 'material-theme',
+        light: 'material-theme-lighter',
+      },
+    },
+    sources: {
+      content: {
+        base: path.resolve(__dirname, 'content'),
+        driver: 'fs',
+      },
     },
   },
-  runtimeConfig: {
-    public: {
-      keybase: '',
-      facebook: '',
-      twitter: '',
-      github: '',
-      linkedin: '',
-      email: '',
-      analytics: '',
-    },
-  },
+  modules: [
+    '@nuxt/ui',
+    '@nuxt/content',
+    '@nuxtjs/sitemap',
+    '@nuxt/devtools',
+    '@vueuse/nuxt',
+    '@nuxtjs/robots',
+  ],
   nitro: {
     prerender: {
       crawlLinks: true,
@@ -111,15 +89,37 @@ export default defineNuxtConfig({
   routeRules: {
     '/musicbeeremote/**': {
       redirect: {
-        to: 'https://mbrc.kelsos.net/',
         statusCode: 301,
+        to: 'https://mbrc.kelsos.net/',
       },
     },
     '/news/**': {
       redirect: {
-        to: '/blog',
         statusCode: 301,
+        to: '/blog',
       },
     },
+  },
+  runtimeConfig: {
+    public: {
+      analytics: '',
+      email: '',
+      facebook: '',
+      github: '',
+      keybase: '',
+      linkedin: '',
+      twitter: '',
+    },
+  },
+  site: {
+    url: 'https://kelsos.net',
+  },
+  sitemap: {
+    exclude: ['/card/**'],
+  },
+  ssr: true,
+  ui: {
+    global: true,
+    icons: ['heroicons', 'simple-icons'],
   },
 });
