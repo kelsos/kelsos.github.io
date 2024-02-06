@@ -6,7 +6,7 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/ui',
     '@nuxt/content',
-    'nuxt-simple-sitemap',
+    '@nuxtjs/sitemap',
     '@nuxt/devtools',
     '@vueuse/nuxt',
     '@nuxtjs/robots',
@@ -48,8 +48,10 @@ export default defineNuxtConfig({
       ],
     },
   },
+  site: {
+    url: 'https://kelsos.net',
+  },
   sitemap: {
-    siteUrl: 'https://kelsos.net',
     exclude: ['/card/**'],
   },
   ui: {
@@ -69,9 +71,9 @@ export default defineNuxtConfig({
     },
     highlight: {
       theme: {
-        light: 'material-lighter',
-        default: 'material-default',
-        dark: 'material-palenight',
+        light: 'material-theme-lighter',
+        default: 'material-theme',
+        dark: 'material-theme-palenight',
       },
       preload: [
         'json',
