@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
@@ -25,7 +25,7 @@ jobs:
         uses: pnpm/action-setup@v2
 
       - name: Setup node env 🏗
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           cache: pnpm
           node-version-file: .nvmrc
@@ -46,13 +46,13 @@ jobs:
 
     steps:
       - name: Checkout 🛎
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
 
       - name: Setup node env 🏗
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           cache: pnpm
           node-version-file: .nvmrc
