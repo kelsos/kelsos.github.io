@@ -102,13 +102,13 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      analytics: '',
-      email: '',
-      facebook: '',
-      github: '',
-      keybase: '',
-      linkedin: '',
-      twitter: '',
+      analytics: 'G-NKE5157MM6',
+      email: 'mailto:kelsos@kelsos.net',
+      facebook: 'https://facebook.com/kelsos',
+      github: 'https://github.com/kelsos',
+      keybase: 'https://keybase.io/kelsos',
+      linkedin: 'https://gr.linkedin.com/in/kelsos',
+      twitter: 'https://twitter.com/kelsos86',
     },
   },
   site: {
