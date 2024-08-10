@@ -79,6 +79,7 @@ export default defineNuxtConfig({
     '@nuxt/devtools',
     '@vueuse/nuxt',
     '@nuxtjs/robots',
+    '@nuxt/image',
   ],
   nitro: {
     prerender: {
