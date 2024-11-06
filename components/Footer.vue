@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const year = new Date().getFullYear();
 const {
-  public: { facebook, twitter, github, linkedin, keybase, email },
+  public: { facebook, bluesky, github, linkedin, keybase, email },
 } = useRuntimeConfig();
 </script>
 
@@ -22,13 +22,13 @@ const {
         </FooterLink>
 
         <FooterLink
-          v-if="twitter"
-          :url="twitter"
+          v-if="bluesky"
+          :url="bluesky"
         >
           <template #description>
-            Twitter
+            Bluesky
           </template>
-          <UIcon name="i-simple-icons-twitter" />
+          <UIcon name="i-simple-icons-bluesky" />
         </FooterLink>
 
         <FooterLink

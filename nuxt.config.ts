@@ -113,12 +113,12 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       analytics: 'G-NKE5157MM6',
+      bluesky: 'https://bsky.app/profile/kelsos.bsky.social',
       email: 'mailto:kelsos@kelsos.net',
       facebook: 'https://facebook.com/kelsos',
       github: 'https://github.com/kelsos',
       keybase: 'https://keybase.io/kelsos',
       linkedin: 'https://gr.linkedin.com/in/kelsos',
-      twitter: 'https://twitter.com/kelsos86',
     },
   },
 

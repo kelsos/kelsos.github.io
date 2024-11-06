@@ -9,7 +9,7 @@ const emit = defineEmits(['update:modelValue']);
 const isDialogOpen = useVModel(props, 'modelValue', emit);
 
 const {
-  public: { twitter, github, email },
+  public: { bluesky, github, email },
 } = useRuntimeConfig();
 </script>
 
@@ -35,12 +35,12 @@ const {
         class="flex items-center lg:gap-1.5 lg:border-l lg:border-l-zinc-500 pl-1.5"
       >
         <UButton
-          v-if="twitter"
-          :to="twitter"
+          v-if="bluesky"
+          :to="bluesky"
           target="_blank"
           color="gray"
           variant="ghost"
-          icon="i-simple-icons-twitter"
+          icon="i-simple-icons-bluesky"
         />
 
         <UButton
