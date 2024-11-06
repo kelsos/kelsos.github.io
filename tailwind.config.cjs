@@ -1,5 +1,4 @@
 export default {
-  mode: 'jit',
   darkMode: 'class',
   content: [
     './components/**/*.{vue,js,ts}',

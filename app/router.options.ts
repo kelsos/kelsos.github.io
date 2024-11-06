@@ -25,7 +25,7 @@ function findHashPosition(hash: string): {
 
 // https://router.vuejs.org/api/#routeroptions
 export default {
-  scrollBehavior(to, from, savedPosition) {
+  async scrollBehavior(to, from, savedPosition) {
     const nuxtApp = useNuxtApp();
     // If history back
     if (savedPosition) {

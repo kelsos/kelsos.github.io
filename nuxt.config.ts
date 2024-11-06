@@ -39,9 +39,13 @@ export default defineNuxtConfig({
       viewport: 'width=device-width, initial-scale=1',
     },
   },
+
   colorMode: {
     preference: 'dark',
   },
+
+  compatibilityDate: '2024-11-06',
+
   content: {
     documentDriven: false,
     highlight: {
@@ -72,8 +76,10 @@ export default defineNuxtConfig({
       },
     },
   },
+
   modules: [
     '@nuxt/ui',
+    '@nuxt/icon',
     '@nuxt/content',
     '@nuxtjs/sitemap',
     '@nuxt/devtools',
@@ -81,12 +87,14 @@ export default defineNuxtConfig({
     '@nuxtjs/robots',
     '@nuxt/image',
   ],
+
   nitro: {
     prerender: {
       crawlLinks: true,
       routes: ['/'],
     },
   },
+
   routeRules: {
     '/musicbeeremote/**': {
       redirect: {
@@ -101,6 +109,7 @@ export default defineNuxtConfig({
       },
     },
   },
+
   runtimeConfig: {
     public: {
       analytics: 'G-NKE5157MM6',
@@ -112,15 +121,18 @@ export default defineNuxtConfig({
       twitter: 'https://twitter.com/kelsos86',
     },
   },
+
   site: {
     url: 'https://kelsos.net',
   },
+
   sitemap: {
     exclude: ['/card/**'],
   },
+
   ssr: true,
+
   ui: {
     global: true,
-    icons: ['heroicons', 'simple-icons'],
   },
 });
