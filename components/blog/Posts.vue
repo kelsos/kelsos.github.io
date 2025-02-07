@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { data } = await useAsyncData('blog', () => queryContent('/blog').sort({ date: -1 }).find());
+const { data } = await useAsyncData('blog', () => queryCollection('blog').order('date', 'DESC').all());
 </script>
 
 <template>
@@ -20,10 +20,10 @@ const { data } = await useAsyncData('blog', () => queryContent('/blog').sort({ d
         >
           <BlogPost
             :title="entry.title"
-            :date="entry.date"
+            :date="entry.date.toLocaleString()"
             :description="entry.description"
             :tags="entry.tags"
-            :link="entry._path"
+            :link="entry.path"
           />
         </template>
       </div>

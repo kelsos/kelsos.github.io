@@ -1,5 +1,4 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import path from 'node:path';
 
 export default defineNuxtConfig({
   app: {
@@ -47,32 +46,29 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-11-06',
 
   content: {
-    documentDriven: false,
-    highlight: {
-      preload: [
-        'json',
-        'js',
-        'ts',
-        'html',
-        'css',
-        'vue',
-        'diff',
-        'shell',
-        'markdown',
-        'yaml',
-        'bash',
-        'ini',
-      ],
-      theme: {
-        dark: 'material-theme-palenight',
-        default: 'material-theme',
-        light: 'material-theme-lighter',
-      },
-    },
-    sources: {
-      content: {
-        base: path.resolve(__dirname, 'content'),
-        driver: 'fs',
+    build: {
+      markdown: {
+        highlight: {
+          preload: [
+            'json',
+            'js',
+            'ts',
+            'html',
+            'css',
+            'vue',
+            'diff',
+            'shell',
+            'markdown',
+            'yaml',
+            'bash',
+            'ini',
+          ],
+          theme: {
+            dark: 'material-theme-palenight',
+            default: 'material-theme',
+            light: 'material-theme-lighter',
+          },
+        },
       },
     },
   },
@@ -80,12 +76,12 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/ui',
     '@nuxt/icon',
-    '@nuxt/content',
-    '@nuxtjs/sitemap',
+    '@nuxt/image',
     '@nuxt/devtools',
     '@vueuse/nuxt',
+    '@nuxtjs/sitemap',
     '@nuxtjs/robots',
-    '@nuxt/image',
+    '@nuxt/content',
   ],
 
   nitro: {

@@ -8,12 +8,12 @@ definePageMeta({
 const route = useRoute();
 const css = useCssModule();
 
-const { data } = await useAsyncData(route.path, () => queryContent(route.path).findOne());
+const { data } = await useAsyncData(route.path, () => queryCollection('blog').path(route.path).first());
 
 if (!isDefined(data))
   navigateTo('/blog');
 
-const postDate = computed(() => new Date(get(data)?.date));
+const postDate = computed(() => get(data)?.date);
 const formattedDate = useDateFormat(postDate, 'DD MMMM YYYY');
 </script>
 
@@ -39,7 +39,7 @@ const formattedDate = useDateFormat(postDate, 'DD MMMM YYYY');
         <span> {{ formattedDate }}</span>
       </SectionHeader>
       <UContainer :class="css.content">
-        <ContentRendererMarkdown :value="data" />
+        <ContentRenderer :value="data" />
       </UContainer>
     </div>
   </main>
