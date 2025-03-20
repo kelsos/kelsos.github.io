@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import Avatar from '~/components/Avatar.vue';
-import teiImg from '~/assets/img/timeline/teithess.png';
-import peImg from '~/assets/img/timeline/perfectedge.png';
 import arxImg from '~/assets/img/timeline/arxnet.png';
 import bbImg from '~/assets/img/timeline/brainbot.jpg';
+import peImg from '~/assets/img/timeline/perfectedge.png';
 import rotkiImg from '~/assets/img/timeline/rotki.png';
+import teiImg from '~/assets/img/timeline/teithess.png';
+import Avatar from '~/components/Avatar.vue';
 
 interface TimelineDataEntry {
   period: string;

@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import ProjectEntry from '~/components/projects/Entry.vue';
-import rotkiImg from '~/assets/img/projects/rotki.png';
 import mbrcImg from '~/assets/img/projects/mbrc.jpg';
 import raidenImg from '~/assets/img/projects/raiden.png';
+import rotkiImg from '~/assets/img/projects/rotki.png';
 import sikorkaImg from '~/assets/img/projects/sikorka.png';
 import wmcImg from '~/assets/img/projects/wmc.png';
+import ProjectEntry from '~/components/projects/Entry.vue';
 
 interface ProjectDetails {
   title: string;
