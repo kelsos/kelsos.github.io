@@ -12,14 +12,19 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.head_ref || github.ref }}
   cancel-in-progress: true
 
+permissions: {}
+
 jobs:
   commit-lint:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - name: Checkout 🛎
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          persist-credentials: 'false'
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
@@ -39,14 +44,20 @@ jobs:
 
       - name: Validate PR commits with commitlint
         if: github.event_name == 'pull_request'
-        run: pnpm exec commitlint --from ${{ github.event.pull_request.base.sha }} --to ${{ github.event.pull_request.head.sha }} --verbose
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: pnpm exec commitlint --from "${BASE_SHA}" --to "${HEAD_SHA}" --verbose
 
   ci:
     runs-on: ubuntu-latest
-
+    permissions:
+      contents: read
     steps:
       - name: Checkout 🛎
         uses: actions/checkout@v4
+        with:
+          persist-credentials: 'false'
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
