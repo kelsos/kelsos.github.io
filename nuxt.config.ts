@@ -1,4 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import tailwindcss from '@tailwindcss/vite';
 
 export default defineNuxtConfig({
   app: {
@@ -39,10 +40,6 @@ export default defineNuxtConfig({
     },
   },
 
-  colorMode: {
-    preference: 'dark',
-  },
-
   compatibilityDate: '2024-11-06',
 
   content: {
@@ -73,14 +70,18 @@ export default defineNuxtConfig({
     },
   },
 
+  css: ['~/assets/css/main.css'],
+
+  future: {
+    compatibilityVersion: 4,
+  },
+
   modules: [
-    '@nuxt/ui',
     '@nuxt/icon',
     '@nuxt/image',
     '@nuxt/devtools',
     '@vueuse/nuxt',
-    '@nuxtjs/sitemap',
-    '@nuxtjs/robots',
+    '@nuxtjs/seo',
     '@nuxt/content',
   ],
 
@@ -89,6 +90,21 @@ export default defineNuxtConfig({
       crawlLinks: true,
       routes: ['/'],
     },
+  },
+
+  ogImage: {
+    defaults: {
+      cacheMaxAge: 60 * 60 * 24 * 7, // 7 days
+      component: 'OgImage',
+      height: 630,
+      width: 1200,
+    },
+    enabled: true,
+  },
+
+  robots: {
+    allow: ['/'],
+    disallow: ['/card/**'],
   },
 
   routeRules: {
@@ -118,7 +134,14 @@ export default defineNuxtConfig({
     },
   },
 
+  seo: {
+    redirectToCanonicalSiteUrl: true,
+  },
+
   site: {
+    defaultLocale: 'en',
+    description: 'Software engineer specializing in open-source development with focus on privacy-preserving applications. Frontend Lead at Rotki.',
+    name: 'Konstantinos Paparas Portfolio',
     url: 'https://kelsos.net',
   },
 
@@ -128,7 +151,8 @@ export default defineNuxtConfig({
 
   ssr: true,
 
-  ui: {
-    global: true,
+  vite: {
+    plugins: [tailwindcss()],
   },
+
 });

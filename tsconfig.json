@@ -1,4 +1,12 @@
 {
   // https://nuxt.com/docs/guide/concepts/typescript
-  "extends": "./.nuxt/tsconfig.json"
+  "extends": "./.nuxt/tsconfig.json",
+  "include": [
+    "content.config.ts",
+    "tailwind.config.ts",
+    "app/app.config.ts",
+    "app/router.options.ts",
+    "env.d.ts",
+    "nuxt.config.ts"
+  ]
 }
