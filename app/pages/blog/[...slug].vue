@@ -5,10 +5,15 @@ definePageMeta({
 
 const route = useRoute();
 
-const { data } = await useAsyncData(route.path, () => queryCollection('blog').path(route.path).first());
+const { data } = await useAsyncData(route.path, async () => {
+  const post = await queryCollection('blog').path(route.path).first();
+  return post || null;
+});
 
-if (!isDefined(data))
-  navigateTo('/blog');
+// Redirect if post not found
+if (!data.value) {
+  await navigateTo('/blog');
+}
 
 const postDate = computed(() => data.value?.date);
 const formattedDate = useDateFormat(postDate, 'DD MMMM YYYY');

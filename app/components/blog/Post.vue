@@ -40,9 +40,9 @@ defineProps<{
         <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-zinc-800 text-zinc-200 mr-2 mb-1">{{ tag }}</span>
       </template>
     </div>
-    <a
+    <NuxtLink
       class="flex items-center text-sm text-primary-500 font-medium"
-      :href="link"
+      :to="link"
     >
       <span
         class="absolute -inset-y-2.5 -inset-x-4 md:-inset-y-4 md:-inset-x-6 sm:rounded-2xl"
@@ -55,6 +55,6 @@ defineProps<{
         name="heroicons:chevron-right"
         class="relative mt-px overflow-visible ml-2.5 text-primary-700"
       />
-    </a>
+    </NuxtLink>
   </article>
 </template>
