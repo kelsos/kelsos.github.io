@@ -2,9 +2,23 @@
 
 Can be found under [kelsos.net](https://kelsos.net).
 
-Build with:
+Built with:
 
-- [Nuxt 3](https://nuxt.com)
-- [NuxtLabs UI](https://ui.nuxtlabs.com)
-- [@nuxt/content](https://content.nuxtjs.org)
-- [tailwind](https://tailwindcss.com/)
+- [Nuxt 4](https://nuxt.com)
+- [@nuxt/content](https://content.nuxt.com)
+- [Tailwind CSS 4](https://tailwindcss.com/)
+- [Inter](https://rsms.me/inter/) (variable font)
+
+## Development
+
+```bash
+pnpm install
+pnpm dev
+```
+
+## Build
+
+```bash
+pnpm build
+pnpm preview
+```
