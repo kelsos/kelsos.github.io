@@ -6,32 +6,40 @@ const { url, img, tech } = defineProps<{
   img: string;
   tech?: string[];
 }>();
-
-const label = computed(() => url.split('://')[1]);
 </script>
 
 <template>
-  <li class="group relative p-6 transition-all duration-300 hover:-translate-y-1">
-    <div
-      class="absolute -inset-x-4 -inset-y-4 z-0 scale-95 bg-zinc-800/50 rounded-2xl opacity-0 transition-all duration-300 group-hover:scale-100 group-hover:opacity-100"
+  <li class="group flex gap-5 p-5 rounded-lg border border-neutral-600 bg-neutral-700 transition-colors duration-200 hover:border-neutral-500">
+    <Avatar
+      :img="img"
+      class="shrink-0 mt-0.5"
     />
-    <div class="relative z-10">
-      <Avatar
-        :img="img"
-        class="mb-4"
-      />
 
-      <h3 class="text-xl font-bold mb-2 text-gray-200 group-hover:text-orange-500 transition-colors">
-        <slot name="title" />
-      </h3>
+    <div class="flex-1 min-w-0">
+      <div class="flex items-center justify-between gap-2">
+        <h3 class="text-base font-medium text-neutral-200 group-hover:text-slate-400 transition-colors duration-200">
+          <slot name="title" />
+        </h3>
+        <a
+          :href="url"
+          target="_blank"
+          rel="noreferrer nofollow"
+          class="text-neutral-500 hover:text-slate-400 transition-colors duration-200 shrink-0"
+        >
+          <Icon
+            name="heroicons:arrow-up-right"
+            class="h-4 w-4"
+          />
+        </a>
+      </div>
 
-      <p class="text-sm text-gray-400 mb-4">
+      <p class="mt-1 text-sm leading-relaxed text-neutral-400">
         <slot />
       </p>
 
       <div
         v-if="tech && tech.length > 0"
-        class="flex flex-wrap gap-2 mb-4"
+        class="flex flex-wrap gap-2 mt-3"
       >
         <TechBadge
           v-for="techItem in tech"
@@ -39,19 +47,6 @@ const label = computed(() => url.split('://')[1]);
           :tech="techItem"
         />
       </div>
-
-      <a
-        :href="url"
-        target="_blank"
-        rel="noreferrer nofollow"
-        class="inline-flex items-center text-sm font-medium text-zinc-400 hover:text-orange-500 transition-colors"
-      >
-        <Icon
-          name="heroicons:link"
-          class="h-4 w-4 flex-none"
-        />
-        <span class="ml-2">{{ label }}</span>
-      </a>
     </div>
   </li>
 </template>

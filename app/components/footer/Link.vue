@@ -9,7 +9,7 @@ defineProps<{
   <a
     :href="url"
     :aria-label="ariaLabel"
-    class="text-gray-400 hover:text-gray-500"
+    class="text-neutral-500 hover:text-neutral-300 transition-colors duration-200"
     target="_blank"
   >
     <span class="sr-only">

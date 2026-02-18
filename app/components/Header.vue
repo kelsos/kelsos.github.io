@@ -4,9 +4,9 @@ const activeSection = ref('profile');
 
 const links = computed(() => [
   { label: 'Profile', to: '#profile', id: 'profile' },
-  { label: 'Timeline', to: '#timeline', id: 'timeline' },
-  { label: 'Projects', to: '#projects', id: 'projects' },
-  { label: 'Skills', to: '#skills', id: 'skills' },
+  { label: 'Experience', to: '#timeline', id: 'timeline' },
+  { label: 'Selected Work', to: '#projects', id: 'projects' },
+  { label: 'Expertise', to: '#skills', id: 'skills' },
   { label: 'Blog', to: '/blog', id: 'blog' },
 ]);
 
@@ -72,7 +72,7 @@ onUnmounted(() => {
 
 <template>
   <header
-    class="sticky top-0 z-50 w-full backdrop-blur flex-none border-b border-zinc-800 bg-zinc-900/75"
+    class="sticky top-0 z-50 w-full backdrop-blur flex-none border-b border-neutral-600 bg-neutral-800/75"
   >
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <HeaderLinks
@@ -92,7 +92,7 @@ onUnmounted(() => {
     >
       <div
         v-show="isDialogOpen"
-        class="fixed inset-0 z-50 bg-zinc-900 lg:hidden"
+        class="fixed inset-0 z-50 bg-neutral-800 lg:hidden"
         @click="isDialogOpen = false"
       >
         <div
@@ -100,7 +100,7 @@ onUnmounted(() => {
           @click.stop
         >
           <div
-            class="px-4 sm:px-6 border-b border-zinc-800 bg-zinc-900"
+            class="px-4 sm:px-6 border-b border-neutral-600 bg-neutral-800"
           >
             <HeaderLinks
               v-model="isDialogOpen"
@@ -109,7 +109,10 @@ onUnmounted(() => {
             />
           </div>
           <div class="flex-1 px-4 sm:px-6 py-8 space-y-8">
-            <nav class="space-y-6">
+            <nav
+              aria-label="Mobile navigation"
+              class="space-y-6"
+            >
               <NavigationLinks
                 :links="links"
                 :active-section="activeSection"

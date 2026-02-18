@@ -16,9 +16,9 @@ const scrollProgress = computed(() => {
 </script>
 
 <template>
-  <div class="fixed top-0 left-0 w-full h-1 z-[60] bg-zinc-800/20">
+  <div class="fixed top-0 left-0 w-full h-px z-[60]">
     <div
-      class="h-full bg-gradient-to-r from-red-600 to-orange-600 transition-all duration-300 ease-out"
+      class="h-full bg-slate-500 transition-all duration-300 ease-out"
       :style="{ width: `${scrollProgress}%` }"
     />
   </div>

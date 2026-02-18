@@ -21,7 +21,7 @@ const isExternal = computed<boolean>(() => props.href.startsWith('http://') || p
     :title="title"
     :target="target || '_blank'"
     rel="noopener noreferrer"
-    class="text-primary-500 hover:text-primary-400"
+    class="text-slate-400 hover:text-slate-300 transition-colors duration-200"
   >
     <slot />
   </a>
@@ -30,7 +30,7 @@ const isExternal = computed<boolean>(() => props.href.startsWith('http://') || p
     :to="href"
     :title="title"
     :target="target"
-    class="text-primary-500 hover:text-primary-400"
+    class="text-slate-400 hover:text-slate-300 transition-colors duration-200"
   >
     <slot />
   </NuxtLink>

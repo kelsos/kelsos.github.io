@@ -65,18 +65,22 @@ const {
 </script>
 
 <template>
-  <section class="items-center py-16 px-4 min-h-screen">
+  <section
+    id="projects"
+    aria-label="Selected Work"
+    class="items-center py-16 px-4 min-h-screen"
+  >
     <SectionHeader>
       <template #title>
-        Projects
+        Selected Work
       </template>
       A curated list of projects I've been involved with
     </SectionHeader>
-    <div class="justify-center max-w-6xl px-4 py-4 mx-auto lg:py-8 md:px-6">
-      <div class="mt-16 sm:mt-20">
+    <div class="max-w-5xl px-4 py-4 mx-auto lg:py-8 md:px-6">
+      <div class="mt-12">
         <ul
           role="list"
-          class="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
+          class="grid grid-cols-1 lg:grid-cols-2 gap-6"
         >
           <template
             v-for="project in projects"
@@ -95,14 +99,14 @@ const {
           </template>
         </ul>
       </div>
-      <div class="mt-16 text-center">
-        <p class="text-sm text-gray-400">
+      <div class="mt-12 text-center">
+        <p class="text-sm text-neutral-500">
           For more projects and contributions, visit my
           <a
             :href="github"
             target="_blank"
             rel="noreferrer nofollow"
-            class="text-orange-500 hover:text-orange-400 transition-colors font-medium"
+            class="text-slate-400 hover:text-slate-300 transition-colors duration-200 font-medium"
           >
             GitHub profile
           </a>

@@ -9,5 +9,8 @@ export default {
     container: {
       center: true,
     },
+    fontFamily: {
+      sans: ['Inter Variable', 'Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+    },
   },
 } satisfies Config;

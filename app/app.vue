@@ -20,7 +20,7 @@ useSeoMeta({
   twitterTitle: 'Konstantinos Paparas (Kelsos) - Privacy-First Open Source Software Engineer',
   twitterDescription: 'Software engineer specializing in open-source development with focus on privacy-preserving applications. Frontend Lead at Rotki.',
   twitterImage: '/img/author.jpg',
-  themeColor: '#dc2626',
+  themeColor: '#262626',
 });
 
 useHead({
@@ -29,7 +29,7 @@ useHead({
     class: 'scroll-mt-4',
   },
   bodyAttrs: {
-    class: 'antialiased font-sans text-gray-200 bg-zinc-900',
+    class: 'antialiased font-sans text-neutral-400 bg-neutral-800',
   },
   script: [
     {

@@ -1,29 +1,47 @@
 <template>
   <main
-    class="flex flex-row items-center justify-center h-screen w-full bg-[url('/img/background.jpg')] bg-cover bg-center"
+    id="profile"
+    aria-label="Profile"
+    class="flex items-center justify-center min-h-screen w-full"
   >
-    <section class="py-16 lg:w-4/6 w-full">
-      <div class="container mx-auto px-4">
-        <div
-          class="relative flex flex-col min-w-0 break-words bg-zinc-800/90 backdrop-blur-sm mb-6 shadow-xl rounded-lg -mt-64 animate-slideUp border border-zinc-700"
-        >
-          <div class="px-6">
-            <div class="flex flex-wrap justify-center">
-              <div class="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
-                <div class="relative -mt-20">
-                  <NuxtImg
-                    class="w-32 h-32 rounded-full object-cover shadow-xl ring-4 ring-zinc-800 animate-fadeIn"
-                    src="/img/author.jpg"
-                    alt="Profile picture"
-                    width="128"
-                    height="128"
-                  />
-                </div>
-              </div>
-            </div>
-            <ProfileBasicDetails />
-            <ProfileBasicDescription />
-          </div>
+    <section class="py-24 w-full">
+      <div class="max-w-2xl mx-auto px-4 text-center animate-fadeIn">
+        <NuxtImg
+          class="w-16 h-16 rounded-full object-cover ring-2 ring-neutral-600 mx-auto"
+          src="/img/author.jpg"
+          alt="Profile picture"
+          width="64"
+          height="64"
+        />
+
+        <h1 class="mt-8 text-5xl md:text-7xl font-light tracking-tight text-neutral-100">
+          Konstantinos Paparas
+        </h1>
+
+        <p class="mt-4 text-xs font-medium uppercase tracking-widest text-neutral-500">
+          Software Engineer · Berlin, Germany
+        </p>
+
+        <p class="mt-8 text-base leading-relaxed text-neutral-400 max-w-2xl mx-auto">
+          I'm a software engineer specializing in open-source development with a strong focus on
+          privacy-preserving applications. My expertise spans front-end development with Vue.js and TypeScript,
+          Android development with Kotlin, and full-stack solutions. Currently leading frontend development at Rotki,
+          building tools that empower users to maintain financial privacy while managing their portfolios.
+        </p>
+
+        <div class="mt-8 flex justify-center gap-8">
+          <a
+            href="#projects"
+            class="text-sm font-medium text-slate-400 hover:text-slate-300 transition-colors duration-200"
+          >
+            View My Work &rarr;
+          </a>
+          <a
+            href="#timeline"
+            class="text-sm font-medium text-slate-400 hover:text-slate-300 transition-colors duration-200"
+          >
+            My Journey &rarr;
+          </a>
         </div>
       </div>
     </section>

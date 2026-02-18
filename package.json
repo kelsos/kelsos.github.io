@@ -13,6 +13,7 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@fontsource-variable/inter": "^5.2.8",
     "@nuxtjs/robots": "5.7.0",
     "@nuxtjs/seo": "3.4.0",
     "@vueuse/core": "14.2.1",

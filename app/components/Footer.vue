@@ -1,103 +1,86 @@
 <script setup lang="ts">
 const year = new Date().getFullYear();
 const {
-  public: { facebook, bluesky, github, linkedin, keybase, email },
+  public: { bluesky, github, linkedin, keybase, email },
 } = useRuntimeConfig();
 </script>
 
 <template>
-  <section>
+  <footer class="border-t border-neutral-600">
     <div
-      class="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8"
+      class="max-w-6xl mx-auto px-4 py-8 flex items-center justify-between sm:px-6 lg:px-8"
     >
-      <div class="flex justify-center mt-8 space-x-6">
-        <FooterLink
-          v-if="facebook"
-          :url="facebook"
-          aria-label="Facebook"
-        >
-          <template #description>
-            Facebook
-          </template>
-          <Icon
-            name="simple-icons:facebook"
-            class="w-5 h-5"
-          />
-        </FooterLink>
-
-        <FooterLink
+      <p class="text-sm text-neutral-500">
+        &copy; {{ year }} Konstantinos Paparas
+      </p>
+      <nav
+        aria-label="Social links"
+        class="flex items-center gap-4"
+      >
+        <a
           v-if="bluesky"
-          :url="bluesky"
+          :href="bluesky"
+          target="_blank"
+          rel="noreferrer nofollow"
           aria-label="Bluesky"
+          class="text-neutral-500 hover:text-neutral-300 transition-colors duration-200"
         >
-          <template #description>
-            Bluesky
-          </template>
           <Icon
             name="simple-icons:bluesky"
-            class="w-5 h-5"
+            class="w-4 h-4"
           />
-        </FooterLink>
-
-        <FooterLink
+        </a>
+        <a
           v-if="github"
-          :url="github"
+          :href="github"
+          target="_blank"
+          rel="noreferrer nofollow"
           aria-label="GitHub"
+          class="text-neutral-500 hover:text-neutral-300 transition-colors duration-200"
         >
-          <template #description>
-            GitHub
-          </template>
           <Icon
             name="simple-icons:github"
-            class="w-5 h-5"
+            class="w-4 h-4"
           />
-        </FooterLink>
-
-        <FooterLink
+        </a>
+        <a
           v-if="linkedin"
-          :url="linkedin"
+          :href="linkedin"
+          target="_blank"
+          rel="noreferrer nofollow"
           aria-label="LinkedIn"
+          class="text-neutral-500 hover:text-neutral-300 transition-colors duration-200"
         >
-          <template #description>
-            Linkedin
-          </template>
           <Icon
             name="simple-icons:linkedin"
-            class="w-5 h-5"
+            class="w-4 h-4"
           />
-        </FooterLink>
-
-        <FooterLink
+        </a>
+        <a
           v-if="keybase"
-          :url="keybase"
+          :href="keybase"
+          target="_blank"
+          rel="noreferrer nofollow"
           aria-label="Keybase"
+          class="text-neutral-500 hover:text-neutral-300 transition-colors duration-200"
         >
-          <template #description>
-            Linkedin
-          </template>
           <Icon
             name="simple-icons:keybase"
-            class="w-5 h-5"
+            class="w-4 h-4"
           />
-        </FooterLink>
-
-        <FooterLink
+        </a>
+        <a
           v-if="email"
-          :url="email"
+          :href="email"
           aria-label="Email"
+          class="text-neutral-500 hover:text-neutral-300 transition-colors duration-200"
         >
-          <template #description>
-            Email
-          </template>
           <Icon
             name="heroicons:envelope"
-            class="w-5 h-5"
+            class="w-4 h-4"
           />
-        </FooterLink>
-      </div>
-      <p class="mt-8 text-base leading-6 text-center text-gray-400">
-        © {{ year }} Konstantinos Paparas. All rights reserved.
-      </p>
+        </a>
+      </nav>
     </div>
-  </section>
+  </footer>
 </template>
