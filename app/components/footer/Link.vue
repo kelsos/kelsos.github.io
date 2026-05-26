@@ -3,6 +3,11 @@ defineProps<{
   url: string;
   ariaLabel: string;
 }>();
+
+defineSlots<{
+  default: () => unknown;
+  description: () => unknown;
+}>();
 </script>
 
 <template>

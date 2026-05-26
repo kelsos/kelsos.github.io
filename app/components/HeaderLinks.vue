@@ -86,6 +86,7 @@ const {
         </NuxtLink>
 
         <button
+          type="button"
           class="lg:hidden p-2 text-neutral-500 hover:text-neutral-300 transition-colors duration-200"
           aria-label="Toggle menu"
           :aria-expanded="isDialogOpen"

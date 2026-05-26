@@ -6,6 +6,11 @@ const { url, img, tech } = defineProps<{
   img: string;
   tech?: string[];
 }>();
+
+defineSlots<{
+  default: () => unknown;
+  title: () => unknown;
+}>();
 </script>
 
 <template>

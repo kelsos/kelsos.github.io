@@ -26,6 +26,7 @@ const formattedDate = useDateFormat(postDate, 'DD MMMM YYYY');
   >
     <nav class="mb-8">
       <button
+        type="button"
         class="inline-flex items-center gap-1.5 text-sm text-neutral-500 hover:text-neutral-300 transition-colors duration-200"
         @click="navigateTo('/blog')"
       >

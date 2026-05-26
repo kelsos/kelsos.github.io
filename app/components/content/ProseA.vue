@@ -1,17 +1,13 @@
 <script setup lang="ts">
-const props = withDefaults(
-  defineProps<{
-    href: string;
-    target?: string;
-    title?: string;
-  }>(),
-  {
-    target: undefined,
-    title: undefined,
-  },
-);
+const { href, target, title } = defineProps<{
+  href: string;
+  target?: string;
+  title?: string;
+}>();
 
-const isExternal = computed<boolean>(() => props.href.startsWith('http://') || props.href.startsWith('https://'));
+defineSlots<{ default: () => unknown }>();
+
+const isExternal = computed<boolean>(() => href.startsWith('http://') || href.startsWith('https://'));
 </script>
 
 <template>
