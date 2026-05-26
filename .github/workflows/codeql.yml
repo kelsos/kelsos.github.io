@@ -6,6 +6,10 @@ on:
   pull_request:
     branches: [main]
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref || github.ref }}
+  cancel-in-progress: true
+
 permissions: {}
 
 jobs:
@@ -13,9 +17,9 @@ jobs:
     name: Analyze
     runs-on: ubuntu-latest
     permissions:
-      actions: read
+      actions: read # required by codeql to read workflow metadata
       contents: read
-      security-events: write
+      security-events: write # required to upload analysis results to the security tab
 
     steps:
       - name: Checkout repository

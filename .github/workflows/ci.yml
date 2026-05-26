@@ -16,6 +16,7 @@ permissions: {}
 
 jobs:
   commit-lint:
+    name: Commit lint
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -50,6 +51,7 @@ jobs:
         run: pnpm exec commitlint --from "${BASE_SHA}" --to "${HEAD_SHA}" --verbose
 
   ci:
+    name: Lint and build
     runs-on: ubuntu-latest
     permissions:
       contents: read

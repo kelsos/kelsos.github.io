@@ -13,10 +13,11 @@ permissions: {}
 
 jobs:
   build:
+    name: Build
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      actions: write
+      actions: write # required to upload the pages artifact
     steps:
       - name: Checkout 🛎
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
@@ -44,11 +45,12 @@ jobs:
           path: .output/public/
 
   deploy:
+    name: Deploy
     needs: build
 
     permissions:
-      pages: write
-      id-token: write
+      pages: write # required to deploy to GitHub Pages
+      id-token: write # required for OIDC token used by deploy-pages
 
     environment:
       name: github-pages
