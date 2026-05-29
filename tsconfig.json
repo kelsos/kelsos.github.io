@@ -1,11 +1,9 @@
 {
-  "extends": "./.nuxt/tsconfig.json",
-  "include": [
-    "content.config.ts",
-    "tailwind.config.ts",
-    "app/app.config.ts",
-    "app/router.options.ts",
-    "env.d.ts",
-    "nuxt.config.ts"
-  ]
+  "references": [
+    { "path": "./.nuxt/tsconfig.app.json" },
+    { "path": "./.nuxt/tsconfig.server.json" },
+    { "path": "./.nuxt/tsconfig.shared.json" },
+    { "path": "./.nuxt/tsconfig.node.json" }
+  ],
+  "files": []
 }

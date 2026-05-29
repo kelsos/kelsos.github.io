@@ -4,7 +4,7 @@ import pluginNuxt from 'eslint-plugin-nuxt';
 export default rotki({
   vue: true,
   typescript: {
-    tsconfigPath: './.nuxt/tsconfig.json',
+    tsconfigPath: './tsconfig.json',
   },
   stylistic: true,
   formatters: true,

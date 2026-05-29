@@ -94,17 +94,15 @@ export default defineNuxtConfig({
 
   ogImage: {
     defaults: {
-      cacheMaxAge: 60 * 60 * 24 * 7, // 7 days
-      component: 'OgImage',
       height: 630,
       width: 1200,
     },
     enabled: true,
+    zeroRuntime: true,
   },
 
   robots: {
     allow: ['/'],
-    disallow: ['/card/**'],
   },
 
   routeRules: {
@@ -150,6 +148,12 @@ export default defineNuxtConfig({
   },
 
   ssr: true,
+
+  typescript: {
+    nodeTsConfig: {
+      include: ['../content.config.ts'],
+    },
+  },
 
   vite: {
     plugins: [tailwindcss()],

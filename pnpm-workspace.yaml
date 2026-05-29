@@ -2,6 +2,7 @@ shellEmulator: true
 trustPolicy: no-downgrade
 trustPolicyExclude:
   - semver@6.3.1
+  - tinyclip@0.1.13
   - tinyexec@1.2.2
 overrides:
   chokidar: ^5.0.0

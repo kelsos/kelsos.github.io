@@ -1,6 +1,12 @@
 @import '@fontsource-variable/inter';
 @import 'tailwindcss';
 
+/* Make `font-sans` resolve to Inter (Tailwind v4 is CSS-first; the old
+   tailwind.config.ts theme was never loaded without an @config directive). */
+@theme {
+  --font-sans: 'Inter Variable', 'Inter', ui-sans-serif, system-ui, sans-serif;
+}
+
 /* Smooth scrolling */
 @layer base {
   html {
