@@ -33,4 +33,11 @@ export default rotki({
   rules: {
     'import/no-default-export': 'off',
   },
+}, {
+  // Code samples inside blog posts are illustrative; Nuxt config/route/component
+  // snippets legitimately use `export default`, so don't flag them.
+  files: ['content/**/*.md/**'],
+  rules: {
+    'import/no-default-export': 'off',
+  },
 });

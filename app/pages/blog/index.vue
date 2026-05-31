@@ -10,7 +10,7 @@ useSeoMeta({
   ogDescription: 'News, updates and the occasional article by Konstantinos Paparas.',
 });
 
-defineOgImageComponent('Site', {
+defineOgImage('Site', {
   title: 'Blog',
   description: 'News, updates and the occasional article by Konstantinos Paparas.',
 });

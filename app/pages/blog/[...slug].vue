@@ -69,7 +69,7 @@ useSchemaOrg([
 
 // OG image props are baked at prerender (not reactive), so reading .value here is intentional.
 // eslint-disable-next-line vue/no-ref-object-reactivity-loss -- prerender-time read
-defineOgImageComponent('Site', { title: post.value?.title, description: cleanDescription.value });
+defineOgImage('Site', { title: post.value?.title, description: cleanDescription.value });
 </script>
 
 <template>
@@ -135,7 +135,7 @@ defineOgImageComponent('Site', { title: post.value?.title, description: cleanDes
       </div>
     </header>
 
-    <article class="prose-editorial [&_p]:py-2 [&_p]:text-body [&_p]:text-base [&_p]:leading-relaxed [&_h2]:font-display [&_h2]:text-2xl [&_h2]:font-medium [&_h2]:text-fg [&_h2]:mt-10 [&_h2]:mb-4 [&_h3]:text-lg [&_h3]:font-medium [&_h3]:text-fg [&_h3]:mt-8 [&_h3]:mb-3 [&_ul]:text-body [&_ol]:text-body [&_li]:text-body [&_a]:text-accent [&_a]:underline [&_a]:underline-offset-2 [&_blockquote]:border-l-2 [&_blockquote]:border-accent [&_blockquote]:pl-4 [&_blockquote]:text-muted [&_blockquote]:italic [&_code]:text-fg [&_pre]:bg-surface-2 [&_pre]:rounded-lg [&_pre]:border [&_pre]:border-line [&_img]:rounded-lg [&_img]:border [&_img]:border-line [&_hr]:border-line">
+    <article class="prose-editorial [&_p]:py-2 [&_p]:text-body [&_p]:text-base [&_p]:leading-relaxed [&_h2]:font-display [&_h2]:text-2xl [&_h2]:font-medium [&_h2]:text-fg [&_h2]:mt-10 [&_h2]:mb-4 [&_h3]:text-lg [&_h3]:font-medium [&_h3]:text-fg [&_h3]:mt-8 [&_h3]:mb-3 [&_ul]:text-body [&_ol]:text-body [&_li]:text-body [&_a]:text-accent [&_a]:underline [&_a]:underline-offset-2 [&_blockquote]:border-l-2 [&_blockquote]:border-accent [&_blockquote]:pl-4 [&_blockquote]:text-muted [&_blockquote]:italic [&_code]:text-fg [&_pre]:bg-surface-2 [&_pre]:rounded-lg [&_pre]:border [&_pre]:border-line [&_pre]:p-4 [&_pre]:overflow-x-auto [&_pre]:text-sm [&_pre]:leading-relaxed [&_img]:rounded-lg [&_img]:border [&_img]:border-line [&_hr]:border-line">
       <ContentRenderer :value="post" />
     </article>
 

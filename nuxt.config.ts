@@ -67,9 +67,8 @@ export default defineNuxtConfig({
             'ini',
           ],
           theme: {
-            dark: 'material-theme-palenight',
-            default: 'material-theme',
-            light: 'material-theme-lighter',
+            dark: 'catppuccin-frappe',
+            default: 'catppuccin-latte',
           },
         },
       },

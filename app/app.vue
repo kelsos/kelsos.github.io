@@ -26,7 +26,7 @@ useSeoMeta({
 
 // Site-wide default OG image, rendered at build by the Satori template
 // (app/components/OgImage/Site.satori.vue). Pages can override per-route.
-defineOgImageComponent('Site', {
+defineOgImage('Site', {
   title: 'Privacy-First Open Source Software Engineer',
   description: 'Frontend Lead at Rotki building tools for financial privacy. Vue.js, TypeScript, Kotlin.',
 });
