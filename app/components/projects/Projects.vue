@@ -62,56 +62,96 @@ const projects: ProjectDetails[] = [
 const {
   public: { github },
 } = useRuntimeConfig();
+
+const [featured, ...rest] = projects;
 </script>
 
 <template>
   <section
     id="projects"
     aria-label="Selected Work"
-    class="items-center py-16 px-4 min-h-screen"
+    class="max-w-5xl mx-auto px-6 py-20 md:py-28"
   >
-    <SectionHeader>
+    <SectionHeader eyebrow="02 / Selected Work">
       <template #title>
-        Selected Work
+        Things I've shipped
       </template>
-      A curated list of projects I've been involved with
+      A curated selection of projects and contributions.
     </SectionHeader>
-    <div class="max-w-5xl px-4 py-4 mx-auto lg:py-8 md:px-6">
-      <div class="mt-12">
-        <ul
-          role="list"
-          class="grid grid-cols-1 lg:grid-cols-2 gap-6"
-        >
-          <template
-            v-for="project in projects"
-            :key="project.title"
-          >
-            <ProjectEntry
-              :url="project.url"
-              :img="project.image"
-              :tech="project.tech"
-            >
-              <template #title>
-                {{ project.title }}
-              </template>
-              {{ project.description }}
-            </ProjectEntry>
-          </template>
-        </ul>
-      </div>
-      <div class="mt-12 text-center">
-        <p class="text-sm text-neutral-500">
-          For more projects and contributions, visit my
-          <a
-            :href="github"
-            target="_blank"
-            rel="noreferrer nofollow"
-            class="text-slate-400 hover:text-slate-300 transition-colors duration-200 font-medium"
-          >
-            GitHub profile
-          </a>
+
+    <a
+      v-if="featured"
+      v-reveal
+      :href="featured.url"
+      target="_blank"
+      rel="noreferrer nofollow"
+      class="group mt-14 grid gap-6 rounded-xl border border-line bg-surface p-6 transition-colors duration-200 hover:border-accent md:grid-cols-[1fr_1.1fr] md:items-center md:gap-10 md:p-8"
+    >
+      <div class="order-2 md:order-1">
+        <span class="text-xs font-medium uppercase tracking-widest text-accent">
+          Featured
+        </span>
+        <h3 class="mt-3 font-display text-2xl md:text-3xl font-medium text-fg">
+          {{ featured.title }}
+        </h3>
+        <p class="mt-3 text-base leading-relaxed text-body">
+          {{ featured.description }}
         </p>
+        <div class="mt-5 flex flex-wrap gap-2">
+          <TechBadge
+            v-for="techItem in featured.tech"
+            :key="techItem"
+            :tech="techItem"
+          />
+        </div>
+        <span class="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-fg transition-colors duration-200 group-hover:text-accent">
+          Visit project
+          <Icon
+            name="heroicons:arrow-up-right"
+            class="w-4 h-4"
+          />
+        </span>
       </div>
-    </div>
+      <NuxtImg
+        :src="featured.image"
+        :alt="featured.title"
+        class="order-1 w-full rounded-lg border border-line object-cover md:order-2"
+        loading="lazy"
+      />
+    </a>
+
+    <ul
+      role="list"
+      class="mt-6 grid grid-cols-1 gap-6 lg:grid-cols-2"
+    >
+      <template
+        v-for="project in rest"
+        :key="project.title"
+      >
+        <ProjectEntry
+          :url="project.url"
+          :img="project.image"
+          :name="project.title"
+          :tech="project.tech"
+        >
+          <template #title>
+            {{ project.title }}
+          </template>
+          {{ project.description }}
+        </ProjectEntry>
+      </template>
+    </ul>
+
+    <p class="mt-12 text-sm text-muted">
+      For more projects and contributions, visit my
+      <a
+        :href="github"
+        target="_blank"
+        rel="noreferrer nofollow"
+        class="font-medium text-accent hover:text-accent-hover transition-colors duration-200"
+      >
+        GitHub profile
+      </a>
+    </p>
   </section>
 </template>

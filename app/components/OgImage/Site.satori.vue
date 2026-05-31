@@ -10,15 +10,20 @@ const { title, description } = defineProps<{
     class="flex h-full w-full flex-col justify-between bg-neutral-800 p-16"
   >
     <!-- Header -->
-    <div class="flex items-center gap-4">
-      <div class="h-16 w-16 rounded-full bg-neutral-600" />
-      <div>
-        <h1 class="text-2xl font-bold text-white">
+    <div class="flex items-center gap-5">
+      <img
+        src="/img/author.jpg"
+        width="80"
+        height="80"
+        class="h-20 w-20 rounded-full object-cover"
+      />
+      <div class="flex flex-col leading-tight">
+        <span class="text-3xl font-bold text-white leading-tight">
           Konstantinos Paparas
-        </h1>
-        <p class="text-lg text-neutral-400">
+        </span>
+        <span class="text-xl text-neutral-400 leading-tight">
           kelsos.net
-        </p>
+        </span>
       </div>
     </div>
 

@@ -2,46 +2,60 @@
   <main
     id="profile"
     aria-label="Profile"
-    class="flex items-center justify-center min-h-screen w-full"
+    class="w-full border-b border-line"
   >
-    <section class="py-24 w-full">
-      <div class="max-w-2xl mx-auto px-4 text-center animate-fadeIn">
-        <NuxtImg
-          class="w-16 h-16 rounded-full object-cover ring-2 ring-neutral-600 mx-auto"
-          src="/img/author.jpg"
-          alt="Profile picture"
-          width="64"
-          height="64"
-        />
+    <section class="max-w-5xl mx-auto px-6 py-24 md:py-36">
+      <div class="grid items-center gap-12 md:grid-cols-[1fr_auto]">
+        <div class="max-w-2xl animate-fadeIn">
+          <div class="flex items-center gap-3">
+            <span class="h-px w-8 bg-accent" />
+            <p class="text-xs font-medium uppercase tracking-widest text-muted">
+              Software Engineer · Berlin, Germany
+            </p>
+          </div>
 
-        <h1 class="mt-8 text-5xl md:text-7xl font-light tracking-tight text-neutral-100">
-          Konstantinos Paparas
-        </h1>
-
-        <p class="mt-4 text-xs font-medium uppercase tracking-widest text-neutral-500">
-          Software Engineer · Berlin, Germany
-        </p>
-
-        <p class="mt-8 text-base leading-relaxed text-neutral-400 max-w-2xl mx-auto">
-          I'm a software engineer specializing in open-source development with a strong focus on
-          privacy-preserving applications. My expertise spans front-end development with Vue.js and TypeScript,
-          Android development with Kotlin, and full-stack solutions. Currently leading frontend development at Rotki,
-          building tools that empower users to maintain financial privacy while managing their portfolios.
-        </p>
-
-        <div class="mt-8 flex justify-center gap-8">
-          <a
-            href="#projects"
-            class="text-sm font-medium text-slate-400 hover:text-slate-300 transition-colors duration-200"
+          <h1
+            aria-label="Konstantinos Paparas"
+            class="mt-6 font-display text-5xl md:text-7xl font-medium leading-[1.05] tracking-tight text-fg"
           >
-            View My Work &rarr;
-          </a>
-          <a
-            href="#timeline"
-            class="text-sm font-medium text-slate-400 hover:text-slate-300 transition-colors duration-200"
-          >
-            My Journey &rarr;
-          </a>
+            Konstantinos<br />Paparas
+          </h1>
+
+          <p class="mt-8 text-lg leading-relaxed text-body">
+            I build open-source software with a focus on privacy-preserving applications —
+            front-end with Vue.js and TypeScript, Android with Kotlin, and full-stack in between.
+            Currently leading frontend at <span class="text-fg font-medium">Rotki</span>,
+            building tools that keep financial data private.
+          </p>
+
+          <div class="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3">
+            <a
+              href="#projects"
+              class="group inline-flex items-center gap-1.5 text-sm font-medium text-fg border-b border-accent pb-1 transition-colors duration-200 hover:text-accent"
+            >
+              View selected work
+              <Icon
+                name="heroicons:arrow-down-right"
+                class="w-4 h-4 text-accent"
+              />
+            </a>
+            <a
+              href="#timeline"
+              class="text-sm font-medium text-muted hover:text-fg transition-colors duration-200"
+            >
+              My journey &rarr;
+            </a>
+          </div>
+        </div>
+
+        <div class="hidden md:block shrink-0">
+          <NuxtImg
+            class="w-40 h-40 lg:w-48 lg:h-48 rounded-full object-cover ring-1 ring-line shadow-xl"
+            src="/img/author.jpg"
+            alt="Konstantinos Paparas"
+            width="192"
+            height="192"
+          />
         </div>
       </div>
     </section>

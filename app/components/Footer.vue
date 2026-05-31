@@ -6,11 +6,11 @@ const {
 </script>
 
 <template>
-  <footer class="border-t border-neutral-600">
+  <footer class="border-t border-line">
     <div
-      class="max-w-6xl mx-auto px-4 py-8 flex items-center justify-between sm:px-6 lg:px-8"
+      class="max-w-5xl mx-auto px-6 py-8 flex items-center justify-between"
     >
-      <p class="text-sm text-neutral-500">
+      <p class="text-sm text-muted">
         &copy; {{ year }} Konstantinos Paparas
       </p>
       <nav
@@ -23,7 +23,7 @@ const {
           target="_blank"
           rel="noreferrer nofollow"
           aria-label="Bluesky"
-          class="text-neutral-500 hover:text-neutral-300 transition-colors duration-200"
+          class="text-muted hover:text-fg transition-colors duration-200"
         >
           <Icon
             name="simple-icons:bluesky"
@@ -36,7 +36,7 @@ const {
           target="_blank"
           rel="noreferrer nofollow"
           aria-label="GitHub"
-          class="text-neutral-500 hover:text-neutral-300 transition-colors duration-200"
+          class="text-muted hover:text-fg transition-colors duration-200"
         >
           <Icon
             name="simple-icons:github"
@@ -49,7 +49,7 @@ const {
           target="_blank"
           rel="noreferrer nofollow"
           aria-label="LinkedIn"
-          class="text-neutral-500 hover:text-neutral-300 transition-colors duration-200"
+          class="text-muted hover:text-fg transition-colors duration-200"
         >
           <Icon
             name="simple-icons:linkedin"
@@ -62,7 +62,7 @@ const {
           target="_blank"
           rel="noreferrer nofollow"
           aria-label="Keybase"
-          class="text-neutral-500 hover:text-neutral-300 transition-colors duration-200"
+          class="text-muted hover:text-fg transition-colors duration-200"
         >
           <Icon
             name="simple-icons:keybase"
@@ -73,7 +73,7 @@ const {
           v-if="email"
           :href="email"
           aria-label="Email"
-          class="text-neutral-500 hover:text-neutral-300 transition-colors duration-200"
+          class="text-muted hover:text-fg transition-colors duration-200"
         >
           <Icon
             name="heroicons:envelope"

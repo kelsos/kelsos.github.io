@@ -19,7 +19,7 @@ const {
       <NuxtLink
         to="/"
         aria-label="Home"
-        class="flex items-end gap-1.5 font-bold text-xl text-neutral-100"
+        class="flex items-end gap-1.5 font-bold text-xl text-fg"
       >
         <NuxtImg
           src="/apple-touch-icon.png"
@@ -43,7 +43,7 @@ const {
       </nav>
 
       <div
-        class="flex items-center lg:gap-1.5 lg:border-l lg:border-l-neutral-600 pl-1.5"
+        class="flex items-center lg:gap-1.5 lg:border-l lg:border-l-line pl-1.5"
       >
         <NuxtLink
           v-if="bluesky"
@@ -51,7 +51,7 @@ const {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Bluesky"
-          class="p-2 text-neutral-500 hover:text-neutral-300 transition-colors duration-200"
+          class="p-2 text-muted hover:text-fg transition-colors duration-200"
         >
           <Icon
             name="simple-icons:bluesky"
@@ -65,7 +65,7 @@ const {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="GitHub"
-          class="p-2 text-neutral-500 hover:text-neutral-300 transition-colors duration-200"
+          class="p-2 text-muted hover:text-fg transition-colors duration-200"
         >
           <Icon
             name="simple-icons:github"
@@ -77,7 +77,7 @@ const {
           v-if="email"
           :to="email"
           aria-label="Email"
-          class="p-2 text-neutral-500 hover:text-neutral-300 transition-colors duration-200"
+          class="p-2 text-muted hover:text-fg transition-colors duration-200"
         >
           <Icon
             name="heroicons:envelope"
@@ -85,9 +85,11 @@ const {
           />
         </NuxtLink>
 
+        <ThemeToggle />
+
         <button
           type="button"
-          class="lg:hidden p-2 text-neutral-500 hover:text-neutral-300 transition-colors duration-200"
+          class="lg:hidden p-2 text-muted hover:text-fg transition-colors duration-200"
           aria-label="Toggle menu"
           :aria-expanded="isDialogOpen"
           @click="isDialogOpen = !isDialogOpen"

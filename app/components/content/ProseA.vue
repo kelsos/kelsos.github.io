@@ -17,7 +17,7 @@ const isExternal = computed<boolean>(() => href.startsWith('http://') || href.st
     :title="title"
     :target="target || '_blank'"
     rel="noopener noreferrer"
-    class="text-slate-400 hover:text-slate-300 transition-colors duration-200"
+    class="text-accent hover:text-accent-hover underline underline-offset-2 transition-colors duration-200"
   >
     <slot />
   </a>
@@ -26,7 +26,7 @@ const isExternal = computed<boolean>(() => href.startsWith('http://') || href.st
     :to="href"
     :title="title"
     :target="target"
-    class="text-slate-400 hover:text-slate-300 transition-colors duration-200"
+    class="text-accent hover:text-accent-hover underline underline-offset-2 transition-colors duration-200"
   >
     <slot />
   </NuxtLink>

@@ -1,7 +1,7 @@
 import type { RouterConfig } from '@nuxt/schema';
 
 function findHashPosition(hash: string): {
-  el: any;
+  el: string;
   behavior: ScrollBehavior;
   top: number;
 } | undefined {

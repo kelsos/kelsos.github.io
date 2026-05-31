@@ -33,11 +33,11 @@ function isActive(link: { to: string; id?: string }) {
   >
     <NuxtLink
       :to="getLink(link.to)"
-      class="block py-3 lg:py-0 lg:inline-flex lg:items-end lg:gap-1.5 text-sm font-medium transition-colors duration-200 border-b border-neutral-600 lg:border-none last:border-b-0"
+      class="block py-3 lg:py-0 lg:inline-flex lg:items-end lg:gap-1.5 text-sm font-medium transition-colors duration-200 border-b border-line lg:border-none last:border-b-0"
       :class="[
         isActive(link)
-          ? 'text-neutral-100'
-          : 'text-neutral-500 hover:text-neutral-300',
+          ? 'text-accent'
+          : 'text-muted hover:text-fg',
       ]"
       @click="emit('click')"
     >

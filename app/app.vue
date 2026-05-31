@@ -1,4 +1,10 @@
 <script lang="ts" setup>
+declare global {
+  interface Window {
+    dataLayer: unknown[];
+  }
+}
+
 const {
   public: { analytics },
 } = useRuntimeConfig();
@@ -10,17 +16,19 @@ useSeoMeta({
   author: 'Konstantinos Paparas',
   ogTitle: 'Konstantinos Paparas (Kelsos) - Privacy-First Open Source Software Engineer',
   ogDescription: 'Software engineer specializing in open-source development with focus on privacy-preserving applications. Frontend Lead at Rotki building tools for financial privacy.',
-  ogImage: '/img/author.jpg',
-  ogImageWidth: 1200,
-  ogImageHeight: 630,
   ogType: 'website',
   ogUrl: 'https://kelsos.net',
   ogSiteName: 'Konstantinos Paparas Portfolio',
   twitterCard: 'summary_large_image',
   twitterTitle: 'Konstantinos Paparas (Kelsos) - Privacy-First Open Source Software Engineer',
   twitterDescription: 'Software engineer specializing in open-source development with focus on privacy-preserving applications. Frontend Lead at Rotki.',
-  twitterImage: '/img/author.jpg',
-  themeColor: '#262626',
+});
+
+// Site-wide default OG image, rendered at build by the Satori template
+// (app/components/OgImage/Site.satori.vue). Pages can override per-route.
+defineOgImageComponent('Site', {
+  title: 'Privacy-First Open Source Software Engineer',
+  description: 'Frontend Lead at Rotki building tools for financial privacy. Vue.js, TypeScript, Kotlin.',
 });
 
 useHead({
@@ -29,9 +37,16 @@ useHead({
     class: 'scroll-mt-4',
   },
   bodyAttrs: {
-    class: 'antialiased font-sans text-neutral-400 bg-neutral-800',
+    class: 'antialiased font-sans text-body bg-bg',
   },
   script: [
+    // No-flash theme: set the `dark` class before paint based on the stored
+    // preference (key `theme`, matching useTheme) or the system setting.
+    {
+      innerHTML:
+        '(function(){try{var s=localStorage.getItem(\'theme\');var m=window.matchMedia(\'(prefers-color-scheme: dark)\').matches;var d=s===\'dark\'||((s===null||s===\'auto\')&&m);document.documentElement.classList.toggle(\'dark\',d);}catch(e){document.documentElement.classList.add(\'dark\');}})();',
+      tagPosition: 'head',
+    },
     {
       src: `https://www.googletagmanager.com/gtag/js?id=${analytics}`,
       type: 'text/javascript',

@@ -14,7 +14,7 @@ defineSlots<{
   <a
     :href="url"
     :aria-label="ariaLabel"
-    class="text-neutral-500 hover:text-neutral-300 transition-colors duration-200"
+    class="text-muted hover:text-fg transition-colors duration-200"
     target="_blank"
   >
     <span class="sr-only">

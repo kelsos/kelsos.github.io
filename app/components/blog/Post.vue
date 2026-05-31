@@ -1,59 +1,60 @@
 <script setup lang="ts">
-import PostTime from '~/components/blog/PostTime.vue';
-
-defineProps<{
+const { date } = defineProps<{
   title: string;
   description: string;
   link: string;
-  date: string;
+  date: string | Date;
   tags: string[];
 }>();
+
+const postDate = computed(() => new Date(date));
+const isoDate = computed(() => postDate.value.toISOString());
+const year = useDateFormat(postDate, 'YYYY');
+const dayMonth = useDateFormat(postDate, 'DD MMM');
 </script>
 
 <template>
-  <article class="relative group py-8 border-b border-neutral-600 last:border-b-0">
-    <NuxtLink
-      :to="link"
-      class="block"
+  <article class="group grid gap-2 py-8 border-b border-line last:border-b-0 md:grid-cols-[8rem_1fr] md:gap-8">
+    <div
+      v-if="date"
+      class="flex items-baseline gap-2 md:flex-col md:gap-0.5 md:pt-1"
     >
-      <div class="flex items-baseline justify-between gap-4 mb-2">
-        <h2 class="text-base font-medium text-neutral-200 group-hover:text-slate-400 transition-colors duration-200">
+      <span class="font-display text-lg font-medium text-fg tabular-nums">
+        {{ year }}
+      </span>
+      <time
+        :datetime="isoDate"
+        class="text-xs uppercase tracking-widest text-muted tabular-nums"
+      >
+        {{ dayMonth }}
+      </time>
+    </div>
+
+    <div>
+      <NuxtLink
+        :to="link"
+        class="block"
+      >
+        <h2 class="font-display text-xl font-medium text-fg group-hover:text-accent transition-colors duration-200">
           {{ title }}
         </h2>
-        <span class="text-xs text-neutral-500 tabular-nums shrink-0">
-          <PostTime
-            v-if="date"
-            :date="date"
-          />
-        </span>
-      </div>
+        <p class="mt-2 text-sm leading-relaxed text-body">
+          {{ description }}
+        </p>
+      </NuxtLink>
 
-      <p class="text-sm leading-relaxed text-neutral-400 mb-3">
-        {{ description }}
-      </p>
-
-      <div class="flex items-center gap-3">
-        <div
-          v-if="tags && tags.length > 0"
-          class="flex flex-wrap gap-1.5"
+      <div
+        v-if="tags && tags.length > 0"
+        class="mt-3 flex flex-wrap gap-1.5"
+      >
+        <span
+          v-for="tag in tags"
+          :key="tag"
+          class="text-xs text-muted"
         >
-          <span
-            v-for="tag in tags"
-            :key="tag"
-            class="text-xs text-neutral-500"
-          >
-            #{{ tag }}
-          </span>
-        </div>
-
-        <span class="ml-auto text-xs font-medium text-slate-400 group-hover:text-slate-300 transition-colors duration-200 flex items-center gap-1">
-          Read more
-          <Icon
-            name="heroicons:arrow-right"
-            class="w-3 h-3"
-          />
+          #{{ tag }}
         </span>
       </div>
-    </NuxtLink>
+    </div>
   </article>
 </template>

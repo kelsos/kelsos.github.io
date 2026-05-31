@@ -28,7 +28,13 @@ export default defineNuxtConfig({
       ],
       meta: [
         {
-          content: '#262626',
+          content: '#191613',
+          media: '(prefers-color-scheme: dark)',
+          name: 'theme-color',
+        },
+        {
+          content: '#faf8f4',
+          media: '(prefers-color-scheme: light)',
           name: 'theme-color',
         },
         {
@@ -129,6 +135,23 @@ export default defineNuxtConfig({
       github: 'https://github.com/kelsos',
       keybase: 'https://keybase.io/kelsos',
       linkedin: 'https://gr.linkedin.com/in/kelsos',
+    },
+  },
+
+  schemaOrg: {
+    identity: {
+      description: 'Software engineer specializing in open-source development with focus on privacy-preserving applications. Frontend Lead at Rotki.',
+      image: '/img/author.jpg',
+      jobTitle: 'Software Engineer',
+      name: 'Konstantinos Paparas',
+      sameAs: [
+        'https://github.com/kelsos',
+        'https://gr.linkedin.com/in/kelsos',
+        'https://bsky.app/profile/kelsos.bsky.social',
+        'https://keybase.io/kelsos',
+      ],
+      type: 'Person',
+      url: 'https://kelsos.net',
     },
   },
 

@@ -1,19 +1,33 @@
+<script setup lang="ts">
+defineProps<{
+  eyebrow?: string;
+}>();
+
+defineSlots<{
+  default?: () => unknown;
+  title: () => unknown;
+}>();
+</script>
+
 <template>
-  <div class="max-w-6xl px-4 py-4 mx-auto lg:py-8 md:px-6">
-    <div class="max-w-xl mx-auto">
-      <div class="text-center">
-        <h2 class="text-3xl md:text-4xl font-light tracking-tight text-neutral-100 animate-fadeIn">
-          <slot name="title" />
-        </h2>
-      </div>
-    </div>
+  <div class="max-w-2xl">
     <div
-      v-if="$slots.default"
-      class="max-w-xl mx-auto mt-4"
+      v-if="eyebrow"
+      class="flex items-center gap-3"
     >
-      <div class="text-center text-base leading-relaxed text-neutral-400">
-        <slot />
-      </div>
+      <span class="h-px w-8 bg-accent" />
+      <span class="text-xs font-medium uppercase tracking-widest text-muted">
+        {{ eyebrow }}
+      </span>
     </div>
+    <h2 class="mt-4 font-display text-3xl md:text-4xl font-medium tracking-tight text-fg">
+      <slot name="title" />
+    </h2>
+    <p
+      v-if="$slots.default"
+      class="mt-4 text-base leading-relaxed text-body"
+    >
+      <slot />
+    </p>
   </div>
 </template>
