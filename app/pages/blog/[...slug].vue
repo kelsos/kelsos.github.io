@@ -6,9 +6,13 @@ definePageMeta({
 const route = useRoute();
 const { public: { bluesky } } = useRuntimeConfig();
 
-const { data } = await useAsyncData(route.path, async () => {
+// Normalize trailing slashes so /blog/foo and /blog/foo/ resolve to the same
+// post (static hosts often serve the trailing-slash form).
+const normalizedPath = route.path.replace(/\/+$/, '') || '/';
+
+const { data } = await useAsyncData(normalizedPath, async () => {
   const posts = await queryCollection('blog').order('date', 'DESC').all();
-  const index = posts.findIndex(p => p.path === route.path);
+  const index = posts.findIndex(p => p.path.replace(/\/+$/, '') === normalizedPath);
 
   if (index === -1)
     return null;
@@ -21,9 +25,9 @@ const { data } = await useAsyncData(route.path, async () => {
   };
 });
 
-// Redirect if post not found
+// A genuinely missing post should 404, not silently redirect to the listing.
 if (!data.value) {
-  await navigateTo('/blog');
+  throw createError({ statusCode: 404, statusMessage: 'Post not found', fatal: true });
 }
 
 const post = computed(() => data.value?.post);
