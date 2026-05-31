@@ -25,6 +25,12 @@ export default defineNuxtConfig({
         },
         { href: '/site.webmanifest', rel: 'manifest' },
         { color: '#5bbad5', href: '/safari-pinned-tab.svg', rel: 'mask-icon' },
+        {
+          href: '/feed.xml',
+          rel: 'alternate',
+          title: 'Konstantinos Paparas',
+          type: 'application/rss+xml',
+        },
       ],
       meta: [
         {
@@ -93,7 +99,7 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       crawlLinks: true,
-      routes: ['/'],
+      routes: ['/', '/feed.xml'],
     },
   },
 
