@@ -1,5 +1,5 @@
+import pluginNuxt from '@nuxt/eslint-plugin';
 import rotki from '@rotki/eslint-config';
-import pluginNuxt from 'eslint-plugin-nuxt';
 
 export default rotki({
   vue: true,
@@ -18,8 +18,16 @@ export default rotki({
     nuxt: pluginNuxt,
   },
   rules: {
-    ...pluginNuxt.configs.base.rules,
-    ...pluginNuxt.configs.recommended.rules,
+    'nuxt/no-page-meta-runtime-values': 'error',
+    'nuxt/prefer-import-meta': 'error',
+  },
+}, {
+  // Only meaningful on the Nuxt config itself. `nuxt/nuxt-config-keys-order` is
+  // left off on purpose: it wants Nuxt's canonical key order, which contradicts
+  // the alphabetical `perfectionist/sort-objects` applied to every .ts file.
+  files: ['nuxt.config.ts'],
+  rules: {
+    'nuxt/no-nuxt-config-test-key': 'error',
   },
 }, {
   files: [

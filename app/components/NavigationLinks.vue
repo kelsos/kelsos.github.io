@@ -18,7 +18,7 @@ function getLink(to: string) {
   return to;
 }
 
-function isActive(link: { to: string; id?: string }) {
+function isActive(link: { id?: string }) {
   if (link.id && activeSection) {
     return link.id === activeSection;
   }

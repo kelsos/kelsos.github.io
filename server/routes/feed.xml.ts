@@ -30,6 +30,8 @@ export default defineEventHandler(async (event) => {
     })
     .join('\n');
 
+  const title = site.name ?? 'Konstantinos Paparas';
+
   const lastBuildDate = posts.length > 0
     ? new Date(posts[0].date).toUTCString()
     : new Date().toUTCString();
@@ -37,9 +39,9 @@ export default defineEventHandler(async (event) => {
   const feed = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>${escapeXml(site.name || 'Konstantinos Paparas')}</title>
+    <title>${escapeXml(title)}</title>
     <link>${base}</link>
-    <description>${escapeXml(site.description || '')}</description>
+    <description>${escapeXml(site.description ?? '')}</description>
     <language>en</language>
     <lastBuildDate>${lastBuildDate}</lastBuildDate>
     <atom:link href="${base}/feed.xml" rel="self" type="application/rss+xml" />
