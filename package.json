@@ -17,11 +17,11 @@
     "@fontsource-variable/inter": "^5.2.8",
     "@nuxtjs/robots": "6.1.4",
     "@nuxtjs/seo": "5.3.12",
-    "@vueuse/core": "14.2.1",
-    "@vueuse/integrations": "14.2.1",
-    "@vueuse/math": "14.2.1",
-    "@vueuse/nuxt": "14.2.1",
-    "better-sqlite3": "12.10.0"
+    "@vueuse/core": "14.4.0",
+    "@vueuse/integrations": "14.4.0",
+    "@vueuse/math": "14.4.0",
+    "@vueuse/nuxt": "14.4.0",
+    "better-sqlite3": "12.11.1"
   },
   "devDependencies": {
     "@commitlint/cli": "21.0.1",
@@ -44,7 +44,7 @@
     "husky": "9.1.7",
     "lint-staged": "17.0.5",
     "nuxt": "4.5.1",
-    "satori": "0.26.0",
+    "satori": "0.29.0",
     "tailwindcss": "4.3.0",
     "typescript": "6.0.3"
   },
