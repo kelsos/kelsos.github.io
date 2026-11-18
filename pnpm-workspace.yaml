@@ -1,10 +1,13 @@
-shellEmulator: true
+minimumReleaseAgeExcludePrune: true
 trustPolicy: no-downgrade
+shellEmulator: true
+
 overrides:
   chokidar: 5.0.0
   # 1.0.5 fixes the hanging srvx->node handler that silently truncates
   # prerender under ipx 4 (nuxt/image#2297, unjs/node-mock-http#32).
   node-mock-http: 1.0.5
+
 allowBuilds:
   '@parcel/watcher': true
   better-sqlite3: true
