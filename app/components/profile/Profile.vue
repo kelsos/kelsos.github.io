@@ -45,6 +45,12 @@
             >
               My journey &rarr;
             </a>
+            <NuxtLink
+              to="/cv"
+              class="text-sm font-medium text-muted hover:text-fg transition-colors duration-200"
+            >
+              CV &amp; PDF &rarr;
+            </NuxtLink>
           </div>
         </div>
 

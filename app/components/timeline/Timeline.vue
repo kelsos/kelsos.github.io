@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { education, experience } from '~/data/cv';
+
 interface TimelineDataEntry {
   period: string;
   where: string;
@@ -7,56 +9,8 @@ interface TimelineDataEntry {
 }
 
 const entries: TimelineDataEntry[] = [
-  {
-    period: '2021 - Now',
-    where: 'Rotki Solutions GmbH',
-    what: 'Frontend Lead/Infrastructure',
-    description: 'Working with Vue.js/Typescript, Ansible & Docker Swarm.',
-  },
-  {
-    period: '2018 - 2021',
-    where: 'rotki',
-    what: 'Open-source Contributor',
-    description: 'Working with Vue.js/Typescript on the frontend.',
-  },
-  {
-    period: '2018 - 2020',
-    where: 'brainbot technologies AG',
-    what: 'Software Engineer',
-    description:
-      'Raiden Network WebUI and part of the Raiden Light Client/Dapp team.',
-  },
-  {
-    period: '2015 - 2018',
-    where: 'arx.net S.A.',
-    what: 'Senior Android Developer',
-    description: 'Lead of the Android client of White Mobile Cloud.',
-  },
-  {
-    period: '2013 - 2014',
-    where: 'arx.net S.A.',
-    what: 'Frontend Developer',
-    description: 'Web development with Apache::ASP, Perl, and JQuery.',
-  },
-  {
-    period: '2012 - 2013',
-    where: 'arx.net S.A.',
-    what: 'Intern',
-    description: 'Web development with Apache::ASP, Perl, and JQuery.',
-  },
-  {
-    period: '2011 - 2013',
-    where: 'Perfect Edge Ltd',
-    what: 'Software developer/Infrastructure',
-    description:
-      'Part of a small team working with Adobe Flex/ActionScript 3/PHP/MySQL.',
-  },
-  {
-    period: '2004 - 2014',
-    where: 'IT department, ATEI Thessalonikis',
-    what: 'Bachelor\'s Degree',
-    description: 'Studies',
-  },
+  ...experience.map(({ period, company, role, summary }) => ({ period, where: company, what: role, description: summary })),
+  ...education.map(({ period, institution, degree }) => ({ period, where: institution, what: degree, description: 'Studies' })),
 ];
 </script>
 
