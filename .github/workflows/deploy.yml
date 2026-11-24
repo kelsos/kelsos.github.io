@@ -39,6 +39,15 @@ jobs:
       - name: Build static
         run: pnpm run generate
 
+      # Playwright image version must match the playwright-core devDependency.
+      - name: Render CV PDF 📄
+        run: >-
+          docker run --rm --init --ipc=host
+          --user "$(id -u):$(id -g)" -e HOME=/tmp
+          -v "${GITHUB_WORKSPACE}:/work" -w /work
+          mcr.microsoft.com/playwright:v1.65.1-noble@sha256:1507cbfc550a63a6b7396791ca4f00df17beb56342d2447b3f106c306f525579
+          node scripts/cv-pdf.mjs
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
         with:

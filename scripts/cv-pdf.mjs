@@ -1,20 +1,34 @@
-// Renders the prerendered /cv page to public/cv.pdf with headless Chromium.
-// Run after `nuxt generate` (`pnpm cv:pdf` does both). Commit the result.
-import { spawn, spawnSync } from 'node:child_process';
+// Renders the prerendered /cv page to a PDF with Playwright.
+// Usage: node scripts/cv-pdf.mjs [output]   (default: .output/public/cv.pdf)
+// Run after `nuxt generate` (`pnpm cv:pdf` does both).
+//
+// Browser: $CHROMIUM if set, else Playwright's own build when installed (as in
+// the mcr.microsoft.com/playwright image CI uses), else a system Chromium.
+import { spawnSync } from 'node:child_process';
 import { existsSync, readFileSync, statSync } from 'node:fs';
 import { createServer } from 'node:http';
 import { extname, join, normalize, resolve } from 'node:path';
 import process from 'node:process';
+import { chromium } from 'playwright-core';
 
 const root = resolve('.output/public');
-const output = resolve('public/cv.pdf');
-const browser = process.env.CHROMIUM ?? ['chromium', 'google-chrome-stable', 'google-chrome']
-  .find(bin => spawnSync('which', [bin]).status === 0);
+const output = resolve(process.argv[2] ?? join(root, 'cv.pdf'));
 
 if (!existsSync(join(root, 'cv', 'index.html')))
   throw new Error('No prerendered /cv found, run `nuxt generate` first.');
-if (!browser)
-  throw new Error('Chromium not found, set CHROMIUM to its path.');
+
+function findExecutable() {
+  if (process.env.CHROMIUM)
+    return process.env.CHROMIUM;
+  if (existsSync(chromium.executablePath()))
+    return undefined;
+  const system = ['chromium', 'google-chrome-stable', 'google-chrome']
+    .map(bin => spawnSync('which', [bin], { encoding: 'utf8' }).stdout.trim())
+    .find(Boolean);
+  if (!system)
+    throw new Error('No Chromium found, set CHROMIUM to its path.');
+  return system;
+}
 
 const types = {
   '.css': 'text/css',
@@ -45,24 +59,20 @@ const server = createServer((req, res) => {
   res.end(readFileSync(file));
 });
 
-server.listen(0, '127.0.0.1', () => {
-  const { port } = server.address();
-  // Async spawn: a sync one would block the event loop serving the page.
-  const chromium = spawn(browser, [
-    '--headless',
-    '--disable-gpu',
-    '--no-pdf-header-footer',
-    // Keep the render offline (no analytics or other third-party requests).
-    '--host-resolver-rules=MAP * ~NOTFOUND, EXCLUDE 127.0.0.1',
-    '--run-all-compositor-stages-before-draw',
-    '--virtual-time-budget=5000',
-    `--print-to-pdf=${output}`,
-    `http://127.0.0.1:${port}/cv/`,
-  ], { stdio: 'inherit' });
-  chromium.on('exit', (code) => {
-    server.close();
-    if (code !== 0)
-      process.exit(code ?? 1);
-    console.log(`Wrote ${output}`);
-  });
-});
+await new Promise(done => server.listen(0, '127.0.0.1', done));
+const origin = `http://127.0.0.1:${server.address().port}`;
+
+const browser = await chromium.launch({ executablePath: findExecutable() });
+try {
+  const page = await browser.newPage();
+  // Keep the render offline: no analytics or other third-party requests.
+  await page.route('**/*', route => (route.request().url().startsWith(origin) ? route.continue() : route.abort()));
+  await page.goto(`${origin}/cv/`, { waitUntil: 'load' });
+  await page.evaluate(async () => document.fonts.ready);
+  await page.pdf({ path: output, preferCSSPageSize: true, printBackground: true });
+  console.log(`Wrote ${output}`);
+}
+finally {
+  await browser.close();
+  server.close();
+}
