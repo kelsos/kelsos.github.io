@@ -87,6 +87,12 @@ export default defineNuxtConfig({
     compatibilityVersion: 4,
   },
 
+  linkChecker: {
+    // cv.pdf is rendered after generate; the CV links the site absolutely so
+    // the link still works inside the PDF.
+    excludeLinks: ['/cv.pdf', 'https://kelsos.net'],
+  },
+
   modules: [
     '@nuxt/icon',
     '@nuxt/image',
@@ -99,6 +105,8 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       crawlLinks: true,
+      // Rendered after generate by scripts/cv-pdf.mjs, so it does not exist yet.
+      ignore: ['/cv.pdf'],
       routes: ['/', '/feed.xml'],
     },
   },

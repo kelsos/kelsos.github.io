@@ -13,6 +13,7 @@ const links = [
   { label: 'Selected Work', to: '#projects', id: 'projects' },
   { label: 'Expertise', to: '#skills', id: 'skills' },
   { label: 'Blog', to: '/blog', id: 'blog' },
+  { label: 'CV', to: '/cv', id: 'cv' },
 ];
 
 // Scroll spy functionality

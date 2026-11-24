@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "nuxt build",
+    "cv:pdf": "nuxt generate && node scripts/cv-pdf.mjs",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
@@ -45,6 +46,7 @@
     "husky": "9.1.7",
     "lint-staged": "17.6.0",
     "nuxt": "4.6.4",
+    "playwright-core": "1.65.1",
     "satori": "0.33.5",
     "tailwindcss": "4.3.5",
     "typescript": "6.0.3"

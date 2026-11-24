@@ -1,35 +1,5 @@
 <script setup lang="ts">
-interface SkillCategory {
-  name: string;
-  skills: string[];
-}
-
-const skillCategories: SkillCategory[] = [
-  {
-    name: 'Languages',
-    skills: ['TypeScript', 'Python', 'Kotlin', 'Go', 'C#', 'JavaScript', 'Lua', 'Rust'],
-  },
-  {
-    name: 'Frontend',
-    skills: ['Vue.js 3', 'Nuxt.js', 'Angular', 'Tailwind CSS', 'PostCSS', 'Storybook', 'Vue I18n', 'Vite', 'Vitest'],
-  },
-  {
-    name: 'Backend/Systems',
-    skills: ['Python CLI', 'Go CLI', '.NET Framework', 'REST APIs'],
-  },
-  {
-    name: 'Mobile',
-    skills: ['Android', 'Kotlin', 'Architecture Components', 'Koin DI', 'Material Design'],
-  },
-  {
-    name: 'Tools & DevOps',
-    skills: ['Docker', 'Ansible', 'Git', 'pytest', 'Vitest', 'Robolectric', 'MockK', 'npm', 'pnpm', 'uv', 'Gradle', 'ESLint'],
-  },
-  {
-    name: 'Specialized',
-    skills: ['CLI Development', 'Cross-platform Apps', 'Open Source', 'UI/UX Design Systems', 'Privacy-focused Apps', 'Developer Tooling'],
-  },
-];
+import { skillCategories } from '~/data/cv';
 </script>
 
 <template>
